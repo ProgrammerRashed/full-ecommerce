@@ -1,0 +1,39 @@
+# .gitignore
+
+# Node.js dependencies
+/frontend/node_modules/
+/frontend/.pnp
+/frontend/.pnp.js
+/frontend/.yarn/install-state.gz
+
+# Front-end build artifacts
+/frontend/build/
+/frontend/.next/
+/frontend/out/
+
+# Back-end build artifacts
+/backend/build/
+
+# IDE-specific files
+.vscode/
+
+
+
+# misc
+/frontend/.DS_Store
+/frontend/*.pem
+
+# debug
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# local env files
+/frontend/.env*.local
+
+# vercel
+/frontend/.vercel
+
+# typescript
+/frontend/*.tsbuildinfo
+/frontend/next-env.d.ts
