@@ -6,7 +6,12 @@ const Login = () => {
       <div className='login-form'>
         <h1 className='text-foreground'>Welcome</h1>
         <p className='text-muted-foreground'>Please Login Here</p>
+        {/* Login Form */}
+        <form >
+
+        </form>
       </div>
+      
     </div>
   )
 }
