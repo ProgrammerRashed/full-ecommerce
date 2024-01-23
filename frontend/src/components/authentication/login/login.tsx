@@ -10,9 +10,9 @@ const Login = () => {
           <h1 className="text-foreground font-bold text-xl">Welcome 👋</h1>
           <p className="text-muted-foreground text-sm">Please Login Here</p>
         </div>
-        {/* Login Form */}
+        {/* LOGIN FORM */}
         <form>
-          {/* Email Input */}
+          {/* EMAIL INPUT */}
           <div className="grid w-full items-center gap-1.5">
             <label htmlFor="email">
               Email Address <span className="text-red-500">*</span>
@@ -20,34 +20,36 @@ const Login = () => {
             <input
               placeholder="Enter your email.."
               type="email"
+              name="email"
               required
               className="border border-border focus:outline-input rounded p-2"
             />
           </div>
 
-          {/* Password Input */}
+          {/* PASSWORD INPUT */}
           <div className="grid w-full items-center gap-1.5 mt-3">
             <label htmlFor="email">
               Password <span className="text-red-500">*</span>
             </label>
             <input
               type="password"
+              name="password"
               placeholder="Enter your password.."
               required
               className="border border-border focus:outline-input rounded p-2"
             />
           </div>
 
-          {/* Submit Button */}
+          {/* SUBMIT BUTTON */}
           <Button className="w-full mt-4" type="submit">
             Login
           </Button>
         </form>
 
-        {/* login cta */}
+        {/* LOGIN CTA */}
         <div className="mt-5  w-full flex justify-between gap-8">
-          <Link className="text-blue-500 hover:underline" href="/register">Create an account?</Link>
-          <Link className="text-blue-500 hover:underline" href="/forgot">Forgot Password?</Link>
+          <Link className="text-blue-500 hover:underline" href="/registration">Create an account?</Link>
+          <Link className="text-blue-500 hover:underline" href="/forgot-password">Forgot Password?</Link>
         </div>
       </div>
     </div>
