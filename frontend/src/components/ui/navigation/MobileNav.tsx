@@ -3,6 +3,7 @@ import React from "react";
 import { IoMdHome } from "react-icons/io";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { FaShop } from "react-icons/fa6";
+import { ProfileDropdownMenu } from "./ProfileDropdown";
 const MobileNav = () => {
   return (
     <div className="bg-white border p-3 w-full">
@@ -16,9 +17,9 @@ const MobileNav = () => {
         <Link href="/cart">
           <FaShoppingCart />
         </Link>
-        <Link href="/profile">
-          <FaUserCircle />
-        </Link>
+        <div >
+          <ProfileDropdownMenu/>
+        </div>
       </nav>
     </div>
   );

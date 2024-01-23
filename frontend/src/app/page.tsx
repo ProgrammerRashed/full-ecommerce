@@ -1,4 +1,5 @@
 import MobileNav from "@/components/ui/navigation/MobileNav";
+import { ProfileDropdownMenu } from "@/components/ui/navigation/ProfileDropdown";
 
 export default function Home() {
   return (
