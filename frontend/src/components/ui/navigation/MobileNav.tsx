@@ -6,7 +6,7 @@ import { FaShop } from "react-icons/fa6";
 import { ProfileDropdownMenu } from "./ProfileDropdown";
 const MobileNav = () => {
   return (
-    <div className="bg-white border p-3 w-full">
+    <div className="bg-white p-3 w-full">
       <nav className="flex gap-3  mx-auto justify-between items-center px-3">
         <Link href="/">
           <IoMdHome />
