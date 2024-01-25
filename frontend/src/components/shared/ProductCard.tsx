@@ -9,7 +9,7 @@ const ProductCard = () => {
     }
     const productName = "FiFine K669B Microphone- USB Studio Condenser Microphone For YouTube Studio"
   return (
-    <div className="group border-border shadow hover:shadow-md w-full h-full rounded overflow-hidden transition-all ease-in-out">
+    <div className="group shadow-sm hover:shadow-md w-full h-full rounded overflow-hidden transition-all ease-in-out">
       <div className="product-image relative w-full transition-all ease-in-out">
         <Image
           src={demoImage}
