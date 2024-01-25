@@ -37,13 +37,13 @@ const FooterComponent = () => {
               </h2>
               <nav className="mb-10 list-none">
                 <li className="mt-3">
-                  <a className=" cursor-pointer hover:text-black">Company</a>
+                  <Link href="/about" className=" cursor-pointer hover:text-black">Company</Link>
                 </li>
                 <li className="mt-3">
-                  <a className=" cursor-pointer hover:text-black">Careers</a>
+                  <Link href="/career" className=" cursor-pointer hover:text-black">Careers</Link>
                 </li>
                 <li className="mt-3">
-                  <a className=" cursor-pointer hover:text-black">Blog</a>
+                  <Link href="/team" className=" cursor-pointer hover:text-black">Team</Link>
                 </li>
               </nav>
             </div>
