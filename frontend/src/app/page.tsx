@@ -1,4 +1,5 @@
 import BestSellingProducts from "@/components/best-selling/BestSellingProducts";
+import DealOfTheMonth from "@/components/deal-of-the-month/DealOfTheMonth";
 import HeroSection from "@/components/hero-section/banner";
 import DesktopNav from "@/components/ui/navigation/DesktopNav";
 import MobileNav from "@/components/ui/navigation/MobileNav";
@@ -15,6 +16,11 @@ export default function Home() {
        {/* BEST SELLING PRODUCTS SECTION */}
        <section className="best-selling-products">
         <BestSellingProducts />
+      </section>
+
+       {/* DEAL OF THE MONTH SECTION */}
+       <section className="best-selling-products">
+        <DealOfTheMonth />
       </section>
     </main>
   );
