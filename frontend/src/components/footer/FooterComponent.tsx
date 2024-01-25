@@ -4,9 +4,9 @@ import {
   FaSquareInstagram,
   FaSquareWhatsapp,
   FaSquareYoutube,
-  FaSquarePhone, 
+  FaSquarePhone,
   FaLocationDot,
-  FaMapLocationDot
+  FaMapLocationDot,
 } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 const FooterComponent = () => {
@@ -18,7 +18,10 @@ const FooterComponent = () => {
           <div className="max-w-[1240px] mx-auto">
             {/* LOGO INFO */}
             <div className="">
-              <Link href="/" className="flex items-center justify-center font-medium text-black title-font md:justify-start">
+              <Link
+                href="/"
+                className="flex items-center justify-center font-medium text-black title-font md:justify-start"
+              >
                 ZossGadget
               </Link>
               <p className="mt-2">Elevating Your Tech Experience</p>
@@ -37,13 +40,28 @@ const FooterComponent = () => {
               </h2>
               <nav className="mb-10 list-none">
                 <li className="mt-3">
-                  <Link href="/about" className=" cursor-pointer hover:text-black">Company</Link>
+                  <Link
+                    href="/about"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Company
+                  </Link>
                 </li>
                 <li className="mt-3">
-                  <Link href="/career" className=" cursor-pointer hover:text-black">Careers</Link>
+                  <Link
+                    href="/career"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Careers
+                  </Link>
                 </li>
                 <li className="mt-3">
-                  <Link href="/team" className=" cursor-pointer hover:text-black">Team</Link>
+                  <Link
+                    href="/team"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Team
+                  </Link>
                 </li>
               </nav>
             </div>
@@ -51,23 +69,48 @@ const FooterComponent = () => {
             {/* INFORMATION */}
             <div className="">
               <h2 className="mb-3 text-sm font-medium tracking-widest text-black uppercase title-font">
-                Support
+                Information
               </h2>
               <nav className="mb-10 list-none">
                 <li className="mt-3">
-                  <a className=" cursor-pointer hover:text-black">
-                    Contact Support
-                  </a>
+                  <Link
+                    href="terms"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Terms & Conditions
+                  </Link>
                 </li>
                 <li className="mt-3">
-                  <a className=" cursor-pointer hover:text-black">
-                    Help Resources
-                  </a>
+                  <Link
+                    href="return"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Return Policy
+                  </Link>
                 </li>
                 <li className="mt-3">
-                  <a className=" cursor-pointer hover:text-black">
-                    Release Updates
-                  </a>
+                  <Link
+                    href="privacy"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className="mt-3">
+                  <Link
+                    href="after-sales-support"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    After-Sale Support
+                  </Link>
+                </li>
+                <li className="mt-3">
+                  <Link
+                    href="refund"
+                    className=" cursor-pointer hover:text-black"
+                  >
+                    Refund Policy
+                  </Link>
                 </li>
               </nav>
             </div>
@@ -94,7 +137,7 @@ const FooterComponent = () => {
                   <p>support@zossgadget.com.bd</p>
                 </li>
                 <li className="mt-3 cursor-pointer hover:text-black flex items-center gap-2">
-                  <FaSquarePhone  className="text-xl" />
+                  <FaSquarePhone className="text-xl" />
                   <p> +8801318-944400</p>
                 </li>
                 <li className="mt-3 cursor-pointer hover:text-black flex items-start gap-2">
@@ -104,7 +147,7 @@ const FooterComponent = () => {
                   </p>
                 </li>
                 <li className="mt-1 cursor-pointer  flex items-center gap-2">
-                <FaMapLocationDot className="text-xl"/>
+                  <FaMapLocationDot className="text-xl" />
                   <Link
                     href="https://maps.app.goo.gl/Pc9c16Z2zgRtJScY6"
                     rel="noopener noreferrer"
