@@ -18,12 +18,12 @@ const FooterComponent = () => {
           <div className="max-w-[1240px] mx-auto">
             {/* LOGO INFO */}
             <div className="">
-              <a className="flex items-center justify-center font-medium text-black title-font md:justify-start">
+              <Link href="/" className="flex items-center justify-center font-medium text-black title-font md:justify-start">
                 ZossGadget
-              </a>
-              <p className="mt-2 text-sm ">Elevating Your Tech Experience</p>
+              </Link>
+              <p className="mt-2">Elevating Your Tech Experience</p>
               {/* SOCIAL ICONS */}
-              <div className="mt-4 flex gap-4">
+              <div className="mt-4 flex gap-4 text-xl">
                 <FaSquareFacebook />
                 <FaSquareInstagram />
                 <FaSquareYoutube />
