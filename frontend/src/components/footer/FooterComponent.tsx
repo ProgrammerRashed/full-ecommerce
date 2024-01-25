@@ -1,4 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
+import nagadLogo from "../../assets/nagad-logo.png";
+import bkashLogo from "../../assets/bkash-logo.png";
+import rocketLogo from "../../assets/rocket-logo.jpg";
+import upayLogo from "../../assets/upay-logo.png";
+import surecashLogo from "../../assets/surecash-logo.png";
+import visaLogo from "../../assets/visa-logo.png";
+import mastercardLogo from "../../assets/mastercard-logo.png";
+import americanExpress from "../../assets/amex-logo.png";
 import {
   FaSquareFacebook,
   FaSquareInstagram,
@@ -15,7 +24,7 @@ const FooterComponent = () => {
       <div className="flex items-end w-full">
         <footer className="w-full text-muted-foreground">
           {/* FOOTER CONTENT START */}
-          <div className="max-w-[1240px] mx-auto">
+          <div className="max-w-[1240px] mx-auto grid grid-cols-4 pt-10">
             {/* LOGO INFO */}
             <div className="">
               <Link
@@ -160,7 +169,77 @@ const FooterComponent = () => {
               </nav>
             </div>
           </div>
-
+          {/* PAYMENT METHOD DISPLAY */}
+          <div className="payment-methods-display flex gap-5 items-center justify-center max-w-[1240px] mx-auto py-5">
+            <p className="text-xl text-foreground">Pay With</p>
+            <div className="methods grid grid-cols-8 gap-4 border-l-2 border-black">
+              <div className="ml-2 method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={nagadLogo}
+                  alt="nagad-logo"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={bkashLogo}
+                  alt="bkash-logo"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={rocketLogo}
+                  alt="rocket-logo"
+                  className="rounded"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={surecashLogo}
+                  alt="surecash-logo"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={upayLogo}
+                  alt="upay-logo"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={visaLogo}
+                  alt="visa-logo"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={mastercardLogo}
+                  alt="mastercard-logo"
+                />
+              </div>
+              <div className="method-card bg-white flex justify-center items-center rounded overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={americanExpress}
+                  alt="americanExpress-logo"
+                />
+              </div>
+            </div>
+          </div>
           {/* COPYRIGHT */}
           <div className="bg-foreground text-white">
             <div className="max-w-[1240px] mx-auto py-4">
