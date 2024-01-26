@@ -1,18 +1,18 @@
 # .gitignore
 
 # Node.js dependencies
-/frontend/node_modules/
-/frontend/.pnp
-/frontend/.pnp.js
-/frontend/.yarn/install-state.gz
+/client/node_modules/
+/client/.pnp
+/client/.pnp.js
+/client/.yarn/install-state.gz
 
 # Front-end build artifacts
-/frontend/build/
-/frontend/.next/
-/frontend/out/
+/client/build/
+/client/.next/
+/client/out/
 
 # Back-end build artifacts
-/backend/build/
+/server/build/
 
 # IDE-specific files
 .vscode/
@@ -20,20 +20,20 @@
 
 
 # misc
-/frontend/.DS_Store
-/frontend/*.pem
+/client/.DS_Store
+/client/*.pem
 
 # debug
-/frontend/npm-debug.log*
-/frontend/yarn-debug.log*
-/frontend/yarn-error.log*
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
 
 # local env files
-/frontend/.env*.local
+/client/.env*.local
 
 # vercel
-/frontend/.vercel
+/client/.vercel
 
 # typescript
-/frontend/*.tsbuildinfo
-/frontend/next-env.d.ts
+/client/*.tsbuildinfo
+/client/next-env.d.ts
