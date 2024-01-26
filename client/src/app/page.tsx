@@ -1,6 +1,7 @@
 import BestSellingProducts from "@/components/best-selling/BestSellingProducts";
 import DealOfTheMonth from "@/components/deal-of-the-month/DealOfTheMonth";
 import HeroSection from "@/components/hero-section/banner";
+import ShopByCategory from "@/components/shop-by-category/ShopByCategory";
 import DesktopNav from "@/components/ui/navigation/DesktopNav";
 import MobileNav from "@/components/ui/navigation/MobileNav";
 
@@ -12,6 +13,10 @@ export default function Home() {
       {/* BANNER SECTION / HERO SECTION */}
       <section className="h-[calc(100vh-64px)] overflow-hidden">
         <HeroSection />
+      </section>
+       {/* SHOP BY CATEGORY SECTION */}
+       <section className="shop-by-category">
+        <ShopByCategory />
       </section>
        {/* BEST SELLING PRODUCTS SECTION */}
        <section className="best-selling-products">
