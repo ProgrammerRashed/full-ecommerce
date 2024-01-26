@@ -4,6 +4,7 @@ import "./globals.css";
 import DesktopNav from "@/components/ui/navigation/DesktopNav";
 import MobileNav from "@/components/ui/navigation/MobileNav";
 import FooterComponent from "@/components/footer/FooterComponent";
+import ShopFeatures from "@/components/shop-features/ShopFeatures";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,7 +38,11 @@ export default function RootLayout({
 
         {/* FOOTER */}
         <div>
-          <FooterComponent/>
+          <ShopFeatures />
+        </div>
+        {/* FOOTER */}
+        <div>
+          <FooterComponent />
         </div>
       </body>
     </html>
