@@ -23,8 +23,8 @@ const AllProductShop = () => {
           </div>
         </div>
 
-         {/* FILTER BY PRODUCT BRANDS */}
-         <div className="filter-by-brands mt-5">
+        {/* FILTER BY PRODUCT BRANDS */}
+        <div className="filter-by-brands mt-5">
           <h3 className="font-bold mb-2">Brands</h3>
           <div className="categories">
             <div className="flex items-center space-x-2">
@@ -54,8 +54,8 @@ const AllProductShop = () => {
             </RadioGroup>
           </div>
         </div>
-         {/* SPECIAL SORT */}
-         <div className="sort-by-date mt-5">
+        {/* SPECIAL SORT */}
+        <div className="sort-by-date mt-5">
           <h3 className="font-bold mb-2">View</h3>
           <div className="dates">
             <RadioGroup>
@@ -81,10 +81,9 @@ const AllProductShop = () => {
           <ProductsPage />
         </div>
         <div className="my-10 w-full mx-auto">
-        <PaginationComponent/>
+          <PaginationComponent />
+        </div>
       </div>
-      </div>
-      
     </div>
   );
 };
