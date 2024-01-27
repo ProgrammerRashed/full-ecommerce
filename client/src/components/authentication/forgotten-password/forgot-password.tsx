@@ -1,10 +1,26 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import forgottenPassImage from "../../../assets/auth/image-3.png";
+
 
 const ForgotPassword = () => {
   return (
-    <div className="min-h-screen w-full flex justify-center items-center text-sm">
+    <div className="w-full h-screen lg:grid lg:grid-cols-5">
+      {/* IMAGE */}
+      <div className="hidden lg:block col-span-3 w-full h-screen">
+        <Image
+          src={forgottenPassImage}
+          width={1000}
+          height={1000}
+          alt="forgotten-password-image"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* CONTENT */}
+      <div className="col-span-2 w-full h-full flex justify-center items-center">
       <div className="login-form">
         {/* PAGE HEADER  */}
         <div className="py-5">
@@ -46,6 +62,7 @@ const ForgotPassword = () => {
             Recover Password
           </Button>
         </form>
+      </div>
       </div>
     </div>
   );

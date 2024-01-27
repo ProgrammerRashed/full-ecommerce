@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* NAVIGATION MENUS */}
-        {targetPathname !== "login" && targetPathname !== "registration" && (
+        {targetPathname !== "login" && targetPathname !== "registration" && targetPathname !=="forgot-password" && (
           <div>
             {/* MOBILE NAV */}
             <div className="fixed border lg:hidden bottom-0 w-full overflow-hidden border-border">
@@ -45,7 +45,7 @@ export default function RootLayout({
         <div>{children}</div>
 
         {/* FOOTER */}
-        {targetPathname !== "login" && targetPathname !== "registration" && (
+        {targetPathname !== "login" && targetPathname !== "registration" && targetPathname !=="forgot-password" && (
           <div>
             {targetPathname !== "shop" && (
               <div>
