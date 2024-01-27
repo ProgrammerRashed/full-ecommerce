@@ -1,9 +1,8 @@
 import BestSellingProducts from "@/components/best-selling/BestSellingProducts";
+import DealOfTheDay from "@/components/deal-of-the-day/DealOfTheDay";
 import DealOfTheMonth from "@/components/deal-of-the-month/DealOfTheMonth";
 import HeroSection from "@/components/hero-section/banner";
 import ShopByCategory from "@/components/shop-by-category/ShopByCategory";
-import DesktopNav from "@/components/ui/navigation/DesktopNav";
-import MobileNav from "@/components/ui/navigation/MobileNav";
 
 export default function Home() {
   return (
@@ -17,6 +16,10 @@ export default function Home() {
        {/* SHOP BY CATEGORY SECTION */}
        <section className="shop-by-category">
         <ShopByCategory />
+      </section>
+       {/* DEALS OF THE DAY SECTION */}
+       <section className="deals-of-the-day">
+        <DealOfTheDay />
       </section>
        {/* BEST SELLING PRODUCTS SECTION */}
        <section className="best-selling-products">
