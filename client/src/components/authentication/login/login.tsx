@@ -5,7 +5,7 @@ import loginImage from "../../../assets/auth/image-1.png";
 
 const Login = () => {
   return (
-    <div className="min-h-screen w-full h-screen lg:grid lg:grid-cols-5">
+    <div className="w-full h-screen lg:grid lg:grid-cols-5">
       {/* IMAGE */}
       <div className="hidden lg:block col-span-3 w-full h-screen">
         <Image
