@@ -1,3 +1,4 @@
+import { PaginationComponent } from "@/components/shared/PaginationComponent";
 import ProductsPage from "@/components/shop/ProductsPage";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -53,13 +54,37 @@ const AllProductShop = () => {
             </RadioGroup>
           </div>
         </div>
+         {/* SPECIAL SORT */}
+         <div className="sort-by-date mt-5">
+          <h3 className="font-bold mb-2">View</h3>
+          <div className="dates">
+            <RadioGroup>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="dealOfTheDay" id="dealOfTheDay" />
+                <label htmlFor="dealOfTheDay">Deals of the Day</label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="dealOfTheMonth" id="dealOfTheMonth" />
+                <label htmlFor="dealOfTheMonth">Deal of the Month</label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="bestSelling" id="bestSelling" />
+                <label htmlFor="bestSelling">Best Selling</label>
+              </div>
+            </RadioGroup>
+          </div>
+        </div>
       </div>
       <div className="products col-span-9">
         <h4 className="font-bold mb-3">Showing 1 - 10 of 15 Products</h4>
         <div>
           <ProductsPage />
         </div>
+        <div className="mt-10 w-full mx-auto">
+        <PaginationComponent/>
       </div>
+      </div>
+      
     </div>
   );
 };
