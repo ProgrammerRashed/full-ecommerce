@@ -80,7 +80,7 @@ const AllProductShop = () => {
         <div>
           <ProductsPage />
         </div>
-        <div className="mt-10 w-full mx-auto">
+        <div className="my-10 w-full mx-auto">
         <PaginationComponent/>
       </div>
       </div>
