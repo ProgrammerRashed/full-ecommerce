@@ -1,6 +1,7 @@
 import { Checkbox } from "@radix-ui/react-checkbox";
 import CartTable from "./CartTable";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { Button } from "../ui/button";
 
 const ShoppingCart = () => {
   return (
@@ -60,9 +61,13 @@ const ShoppingCart = () => {
         </div>
 
         {/* CART TOTAL */}
-        <div className="py-3 border-y border-border font-bold text-xl flex justify-between items-center">
+        <div className="py-3 border-t border-border font-bold text-xl flex justify-between items-center">
             <h1>Total:</h1>
             <p>3600.00৳</p>
+        </div>
+        {/* CART CTA */}
+        <div>
+            <Button className="w-full">Login to Checkout</Button>
         </div>
         </div>
       </div>
