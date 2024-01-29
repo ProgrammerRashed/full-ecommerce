@@ -1,0 +1,17 @@
+import { Button } from "@/components/ui/button"
+
+
+const CheckoutSuccessComponent = () => {
+  return (
+    <div className="min-h-[60vh] max-w-[1240px] mx-auto flex flex-col gap-4 justify-center items-center">
+      <h1 className="text-3xl font-bold">Thanks you for your order!</h1>
+      <p>Your order is confirmed. you will receive an email confirmation shortly. Your order id is: ##########</p>
+      <div className="cta flex gap-5">
+        <Button>View Order</Button>
+        <Button variant="outline">View All Orders</Button>
+      </div>
+    </div>
+  )
+}
+
+export default CheckoutSuccessComponent
