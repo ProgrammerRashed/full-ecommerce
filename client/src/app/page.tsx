@@ -3,7 +3,11 @@ import DealOfTheDay from "@/components/deal-of-the-day/DealOfTheDay";
 import DealOfTheMonth from "@/components/deal-of-the-month/DealOfTheMonth";
 import HeroSection from "@/components/hero-section/banner";
 import ShopByCategory from "@/components/shop-by-category/ShopByCategory";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "ZossGadget",
+  description: "One of the best E-commerce website in bangladesh",
+};
 export default function Home() {
   return (
     <main className="website min-h-screen max-w-[1240px] mx-auto">
