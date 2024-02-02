@@ -1,6 +1,7 @@
 import productImage from "../../assets/banner-bg.jpg";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import ProductCard from "../shared/ProductCard";
 
 const ProductDetails = () => {
   const productName =
@@ -49,7 +50,7 @@ const ProductDetails = () => {
 
       {/* PRODUCT DETAILS TABS */}
       <div className="w-full flex justify-center my-8">
-        <Tabs defaultValue="account" className="w-full">
+        <Tabs defaultValue="details" className="w-full">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="details">Details</TabsTrigger>
             <TabsTrigger value="more-info">More Information</TabsTrigger>
@@ -98,6 +99,19 @@ const ProductDetails = () => {
             </div>
           </TabsContent>
         </Tabs>
+      </div>
+
+      {/* DISPLAY RELATED PRODUCTS */}
+      <div>
+        <div className="bg-accent p-2 w-full">
+          <h1>Related Products</h1>
+        </div>
+        <div className="grid grid-cols-4 mt-3 gap-4">
+          <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
+        </div>
       </div>
     </div>
   );
