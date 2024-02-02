@@ -5,7 +5,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const AllProductShop = () => {
   return (
-    <div className="grid grid-cols-12 max-w-[1240px] mx-auto">
+    <div className="grid grid-cols-12 max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="sidebar col-span-3">
         {/* FILTER BY PRODUCT CATEGORY */}
         <div className="filter-by-cat">

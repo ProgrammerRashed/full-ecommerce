@@ -22,7 +22,7 @@ export default function ProfileLayout({
   const targetPathname = pathName[pathName.length - 1];
 
   return (
-    <div className="max-w-[1240px] mx-auto">
+    <div className="max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
       <h1 className="text-4xl font-bold">My Profile</h1>
 
       <div className="grid grid-cols-12 gap-5 mt-8 min-h-[60vh]">

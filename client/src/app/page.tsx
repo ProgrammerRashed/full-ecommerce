@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <main className="website min-h-screen max-w-[1240px] mx-auto">
+    <main className="website min-h-screen max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
      
 
       {/* BANNER SECTION / HERO SECTION */}

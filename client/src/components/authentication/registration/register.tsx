@@ -5,15 +5,15 @@ import registerImage from "../../../assets/auth/image-2.png";
 
 const Register = () => {
   return (
-    <div className="w-full min-h-screen lg:grid lg:grid-cols-5 justify-center items-center">
+    <div className="w-full max-h-screen lg:grid lg:grid-cols-5 justify-center items-center overflow-hidden">
       {/* IMAGE */}
-      <div className="hidden lg:block col-span-3 w-full h-screen">
+      <div className="hidden lg:block col-span-3 w-full h-screen -mt-2">
         <Image
           src={registerImage}
           width={1000}
           height={1000}
           alt="register-image"
-          className="w-full h-full object-cover"
+          className="w-full object-cover h-screen"
         />
       </div>
 
