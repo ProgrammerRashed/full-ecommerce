@@ -1,12 +1,21 @@
+import { Button } from "../ui/button";
+
 const CareerComponent = () => {
+  const isJobAvailable = false
+  
   return (
     <div>
-      <div className="bg-accent flex justify-center items-center p-10">
-        <h1>Job&apos;s at ZossGadget</h1>
+      <div className="bg-accent flex flex-col justify-center items-center p-10">
+        <h1 className="text-2xl">Job&apos;s at ZossGadget</h1>
+        <div className="flex justify-center items-center gap-3 mt-6">
+          <input type="text" className="w-full h-10 rounded" />
+          <Button>Search</Button>
+        </div>
       </div>
       {/* Job Card */}
-      <div className="relative flex min-h-screen flex-col jus items-center justify-center overflow-hidden bg-gray-50 px-6">
-        <div className="bg-white  shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center  justify-between px-5 py-4 rounded-md">
+      <div className="relative flex flex-col items-center justify-center overflow-hidden bg-gray-50 p-20">
+        {
+          isJobAvailable ? <div className="bg-white  shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center  justify-between px-5 py-4 rounded-md">
           <div>
             <span className="text-purple-800 text-sm">Engineering</span>
             <h3 className="font-bold mt-px">
@@ -45,7 +54,11 @@ const CareerComponent = () => {
               Apply Now
             </button>
           </div>
+        </div> : <div className="w-full h-full flex justify-center items-center">
+          <h1>Sorry! No Jobs Available for Now!! </h1>
+          <p>Keep eye on social media profiles!!</p>
         </div>
+        }
       </div>
     </div>
   );
