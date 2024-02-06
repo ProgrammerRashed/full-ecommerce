@@ -2,31 +2,36 @@ import { PaginationComponent } from "@/components/shared/PaginationComponent";
 import ProductsPage from "@/components/shop/ProductsPage";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import getJsonData from "@/lib/getJsonData";
 
-const AllProductShop = () => {
+const AllProductShop = async () => {
+  const data = await getJsonData();
+
   return (
     <div className="grid grid-cols-12 max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="sidebar col-span-3">
         {/* FILTER BY PRODUCT CATEGORY */}
         <div className="filter-by-cat">
           <h3 className="font-bold mb-2">Product Category</h3>
-          <div className="categories">
-            <div className="flex items-center space-x-2">
-              <Checkbox id="Headphones" />
-              <label
-                htmlFor="Headphones"
-                className="leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Headphones
-              </label>
-            </div>
+          <div className="categories space-y-2">
+            {data.map((product, index) => (
+              <div className="flex items-center space-x-2">
+                <Checkbox id={product.category} />
+                <label
+                  htmlFor={product.category}
+                  className="leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  {product.category}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* FILTER BY PRODUCT BRANDS */}
         <div className="filter-by-brands mt-5">
           <h3 className="font-bold mb-2">Brands</h3>
-          <div className="categories">
+          <div className="brand">
             <div className="flex items-center space-x-2">
               <Checkbox id="lenovo" />
               <label
