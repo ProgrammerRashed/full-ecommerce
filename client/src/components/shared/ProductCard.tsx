@@ -20,11 +20,11 @@ const ProductCard = ({product}:any) => {
         </div>
       </div>
       <div className="product-details space-y-2 p-2 overflow-hidden">
-        <TooltipComponent content={product?.name}>
+        
           <h1 className="text-lg font-medium line-clamp-2">
            {product?.name}
           </h1>
-        </TooltipComponent>
+       
         <div className="flex justify-between items-center">
           <h3 className="price text-lg font-bold">
             <span className="taka">৳</span>{product?.price}.00

@@ -7,6 +7,21 @@ import getJsonData from "@/lib/getJsonData";
 const AllProductShop = () => {
   const data = getJsonData();
 
+  // Filter out duplicate categories
+  const uniqueCategories = data.filter(
+    (product, index, self) =>
+      index ===
+      self.findIndex(
+        (singleProduct) => singleProduct.category === product.category
+      )
+  );
+
+  // Filter out duplicate brands
+  const uniqueBrands = data.filter(
+    (product, index, self) =>
+      index ===
+      self.findIndex((singleProduct) => singleProduct.brand === product.brand)
+  );
   return (
     <div className="grid grid-cols-12 max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="sidebar col-span-3 pb-10">
@@ -14,7 +29,7 @@ const AllProductShop = () => {
         <div className="filter-by-cat">
           <h3 className="font-bold mb-2">Product Category</h3>
           <div className="categories space-y-2">
-            {data.map((product, index) => (
+            {uniqueCategories.map((product, index) => (
               <div className="flex items-center space-x-2" key={index}>
                 <Checkbox id={product.category} />
                 <label
@@ -32,17 +47,20 @@ const AllProductShop = () => {
         <div className="filter-by-brands mt-5">
           <h3 className="font-bold mb-2">Brands</h3>
           <div className="brand space-y-2">
-            {data.map((product, index) => (
-              <div className="flex items-center space-x-2" key={index}>
-                <Checkbox id={product.brand} />
-                <label
-                  htmlFor={product.brand}
-                  className="leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {product.brand}
-                </label>
-              </div>
-            ))}
+            {uniqueBrands.map(
+              (product, index) =>
+                product.brand && (
+                  <div className="flex items-center space-x-2" key={index}>
+                    <Checkbox id={product.brand} />
+                    <label
+                      htmlFor={product.brand}
+                      className="leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      {product.brand}
+                    </label>
+                  </div>
+                )
+            )}
           </div>
         </div>
         {/* SORT BY DATE */}
@@ -85,7 +103,7 @@ const AllProductShop = () => {
       <div className="products col-span-9">
         <h4 className="font-bold mb-3">Showing 1 - 10 of 15 Products</h4>
         <div>
-          <ProductsPage data={data}/>
+          <ProductsPage data={data} />
         </div>
         <div className="my-10 w-full mx-auto">
           <PaginationComponent />
