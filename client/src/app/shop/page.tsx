@@ -4,8 +4,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import getJsonData from "@/lib/getJsonData";
 
-const AllProductShop = async () => {
-  const data = await getJsonData();
+const AllProductShop = () => {
+  const data = getJsonData();
 
   return (
     <div className="grid grid-cols-12 max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
