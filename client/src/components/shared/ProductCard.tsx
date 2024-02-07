@@ -5,13 +5,13 @@ import { FaStar } from "react-icons/fa";
 import placeholderImage from "../../assets/banner-bg.jpg"
 const ProductCard = ({product}:any) => {
   return (
-    <div className="group border flex flex-col justify-between shadow-sm hover:scale-[101%] hover:shadow-md w-full h-full rounded overflow-hidden transition-all ease-in-out">
-      <div className="product-image relative h-[70%] w-full transition-all ease-in-out">
+    <div className="group shadow-sm flex flex-col hover:scale-[101%] hover:shadow w-full h-full rounded overflow-hidden transition-all ease-in-out">
+      <div className="product-image relative h-[300px] w-full transition-all ease-in-out overflow-hidden">
         <Image
           src={product?.image|| placeholderImage}
           width={300}
           height={300}
-          className="object-cover w-full h-full"
+          className="object-cover object-center w-full h-full overflow-hidden"
           alt={product?.name}
      
         />
@@ -19,14 +19,14 @@ const ProductCard = ({product}:any) => {
             <Button className="w-full rounded-none">Add to Cart</Button>
         </div>
       </div>
-      <div className="product-details space-y-2 h-[25%] p-4">
+      <div className="product-details space-y-2 p-2 overflow-hidden">
         <TooltipComponent content={product?.name}>
           <h1 className="text-lg font-medium line-clamp-2">
            {product?.name}
           </h1>
         </TooltipComponent>
         <div className="flex justify-between items-center">
-          <h3 className="price text-xl font-bold">
+          <h3 className="price text-lg font-bold">
             <span className="taka">৳</span>{product?.price}.00
           </h3>
           <div className="rating flex gap-1 items-center">
