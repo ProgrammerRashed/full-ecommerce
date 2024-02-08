@@ -51,7 +51,7 @@ export default function getJsonData() {
       brand: "",
       category: "Smartwatches",
       price: "3400",
-      tags: ["dealoftheday"]
+      tags: ["dealoftheday", "dealofthemonth"]
     },
     {
       name: "Recci RLS-L15 Wireless Charging 3-in-1 Charger",
@@ -85,7 +85,7 @@ export default function getJsonData() {
       brand: "",
       category: "Router",
       price: "1220",
-      tags: ["bestselling", "dealoftheday", "dealofthemonth"]
+      tags: ["bestselling", "dealoftheday"]
 
     },
     {

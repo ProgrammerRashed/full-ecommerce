@@ -1,8 +1,14 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import demoImage from "../../assets/banner-bg.jpg";
+import getJsonData from "@/lib/getJsonData";
 
 const DealOfTheMonth = () => {
+  const data = getJsonData();
+  const filteredData = data.filter((product) =>
+    product.tags.some((singleTag) => singleTag.includes("dealofthemonth"))
+  );
+  const bestProductOfTheMonth = filteredData[0];
   return (
     <div className="py-20 grid grid-cols-7">
       <div className="content col-span-4 space-y-4">
@@ -37,13 +43,13 @@ const DealOfTheMonth = () => {
           <Button>View Product</Button>
         </div>
       </div>
-      <div className="image col-span-3 h-full w-full">
+      <div className="image col-span-3 h-full w-full p-10  shadow-md group">
         <Image
-          src={demoImage}
+          src={bestProductOfTheMonth.image}
           width={500}
           height={500}
-          alt="product-name"
-          className="h-full w-full object-cover"
+          alt={bestProductOfTheMonth.name}
+          className="h-full w-full object-cover group-hover:scale-105 transition-all ease-in-out"
         />
       </div>
     </div>
