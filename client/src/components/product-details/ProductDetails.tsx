@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import ProductCard from "../shared/ProductCard";
 import getJsonData from "@/lib/getJsonData";
+import { Button } from "../ui/button";
 
 const ProductDetails = ({ params }: any) => {
   const data = getJsonData();
@@ -46,6 +47,11 @@ const ProductDetails = ({ params }: any) => {
           <div className="description mt-3">
             <h1 className="font-bold">Description</h1>
             <p>{product.description}</p>
+          </div>
+
+          {/* ADD TO CARD CTA */}
+          <div className="add-to-cart cta w-full mt-10">
+            <Button className="w-full">ADD TO CART</Button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import demoImage from "../../assets/banner-bg.jpg";
 import getJsonData from "@/lib/getJsonData";
+import Link from "next/link";
 
 const DealOfTheMonth = () => {
   const data = getJsonData();
@@ -40,7 +41,9 @@ const DealOfTheMonth = () => {
 
         {/* CTA BUTTON */}
         <div className="cta-button pt-5">
-          <Button>View Product</Button>
+          <Link href={`/shop/${bestProductOfTheMonth.id}`}>
+            <Button>View Product</Button>
+          </Link>
         </div>
       </div>
       <div className="image col-span-3 h-full w-full p-10  shadow-md group">

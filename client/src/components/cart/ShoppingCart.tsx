@@ -1,3 +1,4 @@
+"use client"
 import { Checkbox } from "@radix-ui/react-checkbox";
 import CartTable from "./CartTable";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
