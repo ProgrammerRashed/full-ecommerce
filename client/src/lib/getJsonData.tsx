@@ -1,12 +1,12 @@
 export default function getJsonData() {
   const data = [
     {
-      name: "WiWu Detachable Tripod Selfie Stick SE001",
+      name: "Wiwu Detachable Tripod Selfie Stick SE001",
       description:
         "A versatile selfie stick with a detachable tripod feature for stable shots. Perfect for capturing your moments.",
       image:
         "https://i.ibb.co/mqy9Fs0/Wi-Wu-Detachable-Tripod-Selfie-Stick-SE001.jpg",
-      brand: "WIWU",
+      brand: "Wiwu",
       category: "Selfie Stick",
       price: "120",
       tags: ["bestselling"]
@@ -22,13 +22,13 @@ export default function getJsonData() {
       tags: ["bestselling"]
     },
     {
-      name: "Foldable Wireless Keyboard with Touch Pad (WiWu FMK-04)",
+      name: "Foldable Wireless Keyboard with Touch Pad (Wiwu FMK-04)",
       description:
-        "The WiWu FMK-04 Foldable Wireless Keyboard is your portable typing solution. Features a touchpad for added convenience.",
+        "The Wiwu FMK-04 Foldable Wireless Keyboard is your portable typing solution. Features a touchpad for added convenience.",
       image:
         "https://i.ibb.co/p39gL95/Wi-Wu-Foldable-Keyboard-FMK-04.jpg",
-      brand: "WIWU",
-      category: "All Products",
+      brand: "Wiwu",
+      category: "Others",
       price: "3050",
       tags: ["bestselling"]
     },
@@ -37,7 +37,7 @@ export default function getJsonData() {
       description:
         "Immerse yourself in superior sound quality with the Hoco M83 Digital Earphones. Designed for comfort and clarity.",
       image: "https://i.ibb.co/YBDkvX8/Hoco-M83.jpg",
-      brand: "HOCO",
+      brand: "Hoco",
       category: "Headphone",
       price: "1650",
       tags: ["bestselling", "dealoftheday"]
@@ -59,7 +59,7 @@ export default function getJsonData() {
         "Charge multiple devices simultaneously with the Recci RLS-L15 Wireless Charging 3-in-1 Charger. Convenient and efficient.",
       image:
         "https://i.ibb.co/S5S5md4/Recci-RLS-L15.png",
-      brand: "RECCI",
+      brand: "Recci",
       category: "Others",
       price: "1200",
       tags: ["dealoftheday"]
@@ -70,7 +70,7 @@ export default function getJsonData() {
         "Enjoy high-definition video and audio with the Joyroom SY-20H1 HDMI Cable. Supports 4K resolution at 60Hz.",
       image:
         "https://i.ibb.co/42KNy2X/Joyroom-SY-20-H1-HDMI-To-HDMI-Cable.png",
-      brand: "JOYROOM",
+      brand: "Joyroom",
       category: "Cable",
       price: "700",
       tags: ["dealoftheday"]
@@ -100,12 +100,12 @@ export default function getJsonData() {
       tags: ["bestselling", "dealoftheday"]
     },
     {
-      name: "HOCO EW34 True Wireless Bluetooth Earbuds",
+      name: "Hoco EW34 True Wireless Bluetooth Earbuds",
       description:
-        "Experience freedom and convenience with the HOCO EW34 True Wireless Bluetooth Earbuds. Superior sound quality in a compact design.",
+        "Experience freedom and convenience with the Hoco EW34 True Wireless Bluetooth Earbuds. Superior sound quality in a compact design.",
       image:
-        "https://i.ibb.co/1rCy3BP/HOCO-EW34-True-Wireless-Bluetooth-Earbuds.webp",
-      brand: "HOCO",
+        "https://i.ibb.co/1rCy3BP/Hoco-EW34-True-Wireless-Bluetooth-Earbuds.webp",
+      brand: "Hoco",
       category: "TWS",
       price: "3120",
       tags: ["bestselling", "dealoftheday"]
