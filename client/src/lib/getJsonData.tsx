@@ -9,7 +9,7 @@ export default function getJsonData() {
       brand: "WIWU",
       category: "Selfie Stick",
       price: "120",
-      tags: ["bestselling", "dealoftheday"]
+      tags: ["bestselling"]
     },
     {
       name: "HK9 Ultra AMOLED Smartwatch ChatGPT Smartwatch – Gray Color",
@@ -19,7 +19,7 @@ export default function getJsonData() {
       brand: "",
       category: "Smartwatches",
       price: "1300",
-      tags: ["bestselling", "dealoftheday"]
+      tags: ["bestselling"]
     },
     {
       name: "Foldable Wireless Keyboard with Touch Pad (WiWu FMK-04)",
@@ -30,7 +30,7 @@ export default function getJsonData() {
       brand: "WIWU",
       category: "All Products",
       price: "3050",
-      tags: ["bestselling", "dealoftheday"]
+      tags: ["bestselling"]
     },
     {
       name: "Hoco M83 Original Series Wire-Controlled Digital Earphones With Microphone",
@@ -85,7 +85,7 @@ export default function getJsonData() {
       brand: "",
       category: "Router",
       price: "1220",
-      tags: ["bestselling", "dealoftheday"]
+      tags: ["bestselling", "dealoftheday", "dealofthemonth"]
 
     },
     {

@@ -3,8 +3,13 @@ import { Button } from "../ui/button";
 import demoImage from "../../assets/banner-bg.jpg";
 import Link from "next/link";
 import ProductCard from "../shared/ProductCard";
+import getJsonData from "@/lib/getJsonData";
 
 const DealOfTheDay = () => {
+  const data = getJsonData();
+  const filteredData = (data.filter((product) =>
+    product.tags.some((singleTag) => singleTag.includes("dealoftheday"))).slice(0, 4)
+  );
   return (
     <div className="py-20 ">
       <div className="flex justify-between items-center">
@@ -22,10 +27,11 @@ const DealOfTheDay = () => {
       </div>
       {/* PRODUCTS */}
       <div className="grid grid-cols-4 gap-3 mt-8">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      {filteredData.map((product, index) => (
+          <div key={index}>
+            <ProductCard product={product} />
+          </div>
+        ))}
       </div>
     </div>
   );
