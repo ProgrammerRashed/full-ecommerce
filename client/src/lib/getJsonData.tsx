@@ -9,6 +9,7 @@ export default function getJsonData() {
       brand: "WIWU",
       category: "Selfie Stick",
       price: "120",
+      tags: ["bestselling", "dealoftheday"]
     },
     {
       name: "HK9 Ultra AMOLED Smartwatch ChatGPT Smartwatch – Gray Color",
@@ -18,6 +19,7 @@ export default function getJsonData() {
       brand: "",
       category: "Smartwatches",
       price: "1300",
+      tags: ["bestselling", "dealoftheday"]
     },
     {
       name: "Foldable Wireless Keyboard with Touch Pad (WiWu FMK-04)",
@@ -28,6 +30,7 @@ export default function getJsonData() {
       brand: "WIWU",
       category: "All Products",
       price: "3050",
+      tags: ["bestselling", "dealoftheday"]
     },
     {
       name: "Hoco M83 Original Series Wire-Controlled Digital Earphones With Microphone",
@@ -37,6 +40,7 @@ export default function getJsonData() {
       brand: "HOCO",
       category: "Headphone",
       price: "1650",
+      tags: ["bestselling", "dealoftheday"]
     },
     {
       name: "HK9 Ultra AMOLED Smartwatch ChatGPT Smartwatch – Black Color",
@@ -47,6 +51,7 @@ export default function getJsonData() {
       brand: "",
       category: "Smartwatches",
       price: "3400",
+      tags: ["dealoftheday"]
     },
     {
       name: "Recci RLS-L15 Wireless Charging 3-in-1 Charger",
@@ -57,6 +62,7 @@ export default function getJsonData() {
       brand: "RECCI",
       category: "Others",
       price: "1200",
+      tags: ["dealoftheday"]
     },
     {
       name: "Joyroom SY-20H1 HDMI To HDMI Cable (4K@60Hz)",
@@ -67,6 +73,8 @@ export default function getJsonData() {
       brand: "JOYROOM",
       category: "Cable",
       price: "700",
+      tags: ["dealoftheday"]
+
     },
     {
       name: "TABWD 4G Router MF920 – White Color",
@@ -77,6 +85,8 @@ export default function getJsonData() {
       brand: "",
       category: "Router",
       price: "1220",
+      tags: ["bestselling", "dealoftheday"]
+
     },
     {
       name: "Jmary KP-2205 Tripod With Mobile Holder",
@@ -87,6 +97,7 @@ export default function getJsonData() {
       brand: "",
       category: "Tripod",
       price: "1120",
+      tags: ["bestselling", "dealoftheday"]
     },
     {
       name: "HOCO EW34 True Wireless Bluetooth Earbuds",
@@ -97,6 +108,7 @@ export default function getJsonData() {
       brand: "HOCO",
       category: "TWS",
       price: "3120",
+      tags: ["bestselling", "dealoftheday"]
     },
   ];
 
