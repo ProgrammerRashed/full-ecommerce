@@ -3,14 +3,50 @@ import { Checkbox } from "@radix-ui/react-checkbox";
 import CartTable from "./CartTable";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Button } from "../ui/button";
+import getJsonData from "@/lib/getJsonData";
+import { useEffect, useState } from "react";
+
+
+interface Product {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  brand: string;
+  category: string;
+  price: string;
+  tags: string[];
+}
 
 const ShoppingCart = () => {
+  const [cartProducts, setCartProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    // Check if running in the client-side environment
+    if (typeof window !== 'undefined') {
+      const cartItemsRaw = localStorage.getItem("cartProducts");
+      let cartItems:string[] = [];
+
+      if (cartItemsRaw) {
+        cartItems = JSON.parse(cartItemsRaw);
+      }
+
+      const data = getJsonData();
+      const filteredProducts = data.filter(product => cartItems.includes(product.id));
+      setCartProducts(filteredProducts);
+    }
+  }, []);
+
+  if (cartProducts.length === 0) {
+    return <div><h1>No Items are added to the cart!!!</h1></div>;
+  }
+
   return (
     // CART PRODUCTS
     <div className="grid grid-cols-12 gap-5">
       <div className="cart col-span-8">
         <h1 className="text-xl font-bold my-4">Cart</h1>
-        <CartTable />
+        <CartTable cartProducts={cartProducts} />
       </div>
 
       {/* CART SUMMARY */}
