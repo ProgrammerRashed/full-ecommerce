@@ -1,10 +1,15 @@
 import Image from "next/image";
 import productImage from "../../assets/banner-bg.jpg";
 import { FaMinus } from "react-icons/fa";
+import { getSession } from "@/actions";
 
-const MainProfilePage = () => {
+const MainProfilePage = async () => {
   const productName =
     "FiFine K669B Microphone- USB Studio Condenser Microphone For YouTube Studio";
+
+
+    const session = await getSession()
+    console.log("session:"+session.name)
   return (
     <div>
       <div className="grid grid-cols-2 gap-5">

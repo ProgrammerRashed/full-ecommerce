@@ -1,6 +1,6 @@
 import ContinueShoppingCard from "@/components/cart/ContinueShoppingCard";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+
 import Link from "next/link";
 import { FaRegUser } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
@@ -15,11 +15,6 @@ export default function ProfileLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // GETTING CURRENT PATHNAME
-  const headersList = headers();
-  const headerUrl = headersList.get("x-url") || "";
-  const pathName = headerUrl.split("/");
-  const targetPathname = pathName[pathName.length - 1];
 
   return (
     <div className="max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
