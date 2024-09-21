@@ -33,7 +33,11 @@ export const doSignup = async (req, res, next) => {
       status: 201,
       success: true,
       message: "User Created Successfully",
-      user: newUser,
+      user: {
+        name: newUser.name || null,
+        email: newUser.email || null,
+        image: newUser.image || null,
+      },
     });
   } catch (err) {
     next(err);
