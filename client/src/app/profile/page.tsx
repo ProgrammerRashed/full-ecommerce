@@ -9,7 +9,7 @@ const MainProfilePage = async () => {
 
 
     const session = await getSession()
-    console.log("session:"+session.name)
+    console.log("session:"+session.email)
   return (
     <div>
       <div className="grid grid-cols-2 gap-5">

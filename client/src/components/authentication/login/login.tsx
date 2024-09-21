@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import loginImage from "../../../assets/auth/image-1.png";
+import { login } from "@/actions";
 
 const Login = () => {
   return (
@@ -14,6 +15,7 @@ const Login = () => {
           height={1000}
           alt="login-image"
           className="w-full h-full object-cover"
+          unoptimized
         />
       </div>
 
@@ -26,7 +28,7 @@ const Login = () => {
             <p className="text-muted-foreground text-sm">Please Login Here</p>
           </div>
           {/* LOGIN FORM */}
-          <form>
+          <form action={login}>
             {/* EMAIL INPUT */}
             <div className="grid w-full items-center gap-1.5">
               <label htmlFor="email">
