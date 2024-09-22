@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-   "dev": "next dev --turbo",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -20,6 +20,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@tailwindcss/line-clamp": "^0.4.4",
     "axios": "^1.7.7",
+    "browser-image-compression": "^2.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "iron-session": "^8.0.3",
