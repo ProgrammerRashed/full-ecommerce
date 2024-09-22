@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,26 +6,28 @@ import loginImage from "../../../assets/auth/image-1.png";
 import { login } from "@/actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import useClientSession from "@/lib/useClientSession";
-
+import { useEffect } from "react";
 
 const Login = () => {
-  const [state, formAction] = useFormState<any, FormData>(login, null)
-  const router = useRouter(); // Use the router for redirection
+  const [state, formAction] = useFormState<any, FormData>(login, null);
+  const router = useRouter();
+  const { session, loading } = useClientSession();
+  if (loading) return <p>Loading...</p>;
+
+  if (!loading && session) {
+    router.push("/"); 
+  }
+
   if (state && state.status === "Success") {
     toast.success("Registration successful!");
-
-    // Redirect after a short delay
     setTimeout(() => {
-      router.push("/profile"); // Use Next.js router for redirection
+      router.push("/profile");
     }, 1000);
   }
-  const { session, loading } = useClientSession();
+ 
 
-  if (loading) return <p>Loading...</p>;
-  if (!session) return <p>No session found</p>;
-  console.log("LoginSession", session)
   return (
     <div className="w-full h-screen lg:grid lg:grid-cols-5">
       {/* IMAGE */}
@@ -42,12 +44,13 @@ const Login = () => {
 
       {/* CONTENT */}
       <div className="col-span-2 w-full h-full flex justify-center items-center">
-        <div className="login-form ">
+        <div className="login-form">
           {/* PAGE HEADER  */}
           <div className="py-5">
             <h1 className="text-foreground font-bold text-xl">Welcome 👋</h1>
             <p className="text-muted-foreground text-sm">Please Login Here</p>
           </div>
+
           {/* LOGIN FORM */}
           <form action={formAction}>
             {/* EMAIL INPUT */}
@@ -66,7 +69,7 @@ const Login = () => {
 
             {/* PASSWORD INPUT */}
             <div className="grid w-full items-center gap-1.5 mt-3">
-              <label htmlFor="email">
+              <label htmlFor="password">
                 Password <span className="text-red-500">*</span>
               </label>
               <input
@@ -83,22 +86,18 @@ const Login = () => {
               Login
             </Button>
           </form>
+
           {/* Display error */}
           {state && state.error && (
             <p className="mt-2 text-red-500">{state.error}</p>
           )}
+
           {/* LOGIN CTA */}
           <div className="mt-5 w-full flex justify-between gap-5 lg:gap-8">
-            <Link
-              className="text-blue-500 hover:underline"
-              href="/registration"
-            >
+            <Link className="text-blue-500 hover:underline" href="/registration">
               Create an account?
             </Link>
-            <Link
-              className="text-blue-500 hover:underline"
-              href="/forgot-password"
-            >
+            <Link className="text-blue-500 hover:underline" href="/forgot-password">
               Forgot Password?
             </Link>
           </div>

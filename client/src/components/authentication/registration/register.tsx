@@ -6,9 +6,18 @@ import { signup } from "@/actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation'
+import useClientSession from "@/lib/useClientSession";
 const Register = () => {
   const router = useRouter(); // Use the router for redirection
   const [state, formAction] = useFormState<any, FormData>(signup, null)
+
+  const { session, loading } = useClientSession();
+  if (loading) return <p>Loading...</p>;
+
+  if (!loading && session) {
+    router.push("/"); 
+  }
+
  // Trigger a toast on successful registration
  if (state && state.status === "Success") {
   toast.success("Registration successful!");
