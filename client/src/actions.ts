@@ -29,24 +29,28 @@ export const signup = async (prevState:{
    const name = formData.get("name")
    const email = formData.get("email")
    const password = formData.get("password")
-   const image = formData.get("image")
+   const image = formData.get("image")  as File;
    const confirmedPass = formData.get("confirm-password")
 
    if(password !== confirmedPass) {
       return {error: "Password does not match!"}
    }
+   const dataToSend = new FormData();
+   dataToSend.append("image", image); // Append the image file
 
 
    try {
-      const response = await axios.post('http://localhost:8080/upload', formData, {
+      const response = await axios.post('http://localhost:8080/upload', dataToSend, {
           headers: {
               'Content-Type': 'multipart/form-data',
           },
       });
 
       console.log('Image URL:', response.data.imageUrl); // URL of the uploaded image
+      return { imageUrl: response.data.imageUrl }; // Return the image URL if needed
   } catch (errorMessage) {
-       return {error:'Error uploading image!'};
+      console.log(errorMessage)
+      return { error: 'Error uploading image!' };
   }
    const user = {
       name,

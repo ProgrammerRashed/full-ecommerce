@@ -14,12 +14,11 @@ const Register = () => {
       {/* IMAGE */}
       <div className="hidden lg:block col-span-3 w-full h-screen -mt-2">
         <Image
-          src={registerImage}
+          src="http://localhost:8080/uploads/images/image-2.58742bfd.png"
           width={1000}
           height={1000}
           alt="register-image"
           className="w-full object-cover h-screen"
-          unoptimized
         />
       </div>
 
