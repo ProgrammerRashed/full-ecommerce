@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaRegUser } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
+
 export const metadata: Metadata = {
   title: "ZossGadget | Profile",
   description: "One of the best E-commerce website in bangladesh",

@@ -1,9 +1,14 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import registerImage from "../../../assets/auth/image-2.png";
+import { signup } from "@/actions";
+import { useFormState } from "react-dom";
 
 const Register = () => {
+  const [state, formAction] = useFormState<any, FormData>(signup, null)
+  console.log(state)
   return (
     <div className="w-full max-h-screen lg:grid lg:grid-cols-5 justify-center items-center overflow-hidden">
       {/* IMAGE */}
@@ -14,6 +19,7 @@ const Register = () => {
           height={1000}
           alt="register-image"
           className="w-full object-cover h-screen"
+          unoptimized
         />
       </div>
 
@@ -30,7 +36,7 @@ const Register = () => {
             </p>
           </div>
           {/* LOGIN FORM */}
-          <form>
+          <form action={formAction}>
             {/* NAME INPUT */}
 
             <div className="grid w-full items-center gap-1.5 ">
@@ -48,13 +54,13 @@ const Register = () => {
             {/* FILE INPUT */}
             <div className="grid w-full items-center gap-1.5 mt-4">
               <label htmlFor="name">
-                Choose Image <span className="text-red-500">*</span>
+                Choose Image 
               </label>
               <input
                 name="image"
                 placeholder="Choose Profile Picture"
                 type="file"
-                required
+               
                 className="border border-border focus:outline-input rounded p-1 file:bg-muted file:border-none file:rounded file:mr-3 file:p-1 file:px-2 text-muted-foreground"
               />
             </div>
@@ -109,7 +115,7 @@ const Register = () => {
               Sign Up
             </Button>
           </form>
-
+      {state && <p className="mt-2 text-red-500">{state.error}</p>}
           {/* LOGIN CTA */}
           <div className="my-5 w-full">
             <Link href="/login" className="w-full flex justify-between">

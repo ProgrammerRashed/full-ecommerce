@@ -1,35 +1,61 @@
-"use server"
-import {sessionOptions, SessionData} from "@/lib"
-import { getIronSession } from "iron-session"
-import { cookies } from "next/headers"
-import { redirect } from "next/navigation"
+"use server";
+import { sessionOptions, SessionData } from "@/lib";
+import { getIronSession } from "iron-session";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import axios from "axios"
 export const getSession = async () => {
-const session = await getIronSession<SessionData>(cookies(), sessionOptions)
-return session;
-}
+  const session = await getIronSession<SessionData>(cookies(), sessionOptions);
+  return session;
+};
 
-export const login = async (formData:FormData) => {
-   const session = await getSession()
-   const email = formData.get("email") as string
-   const password = formData.get("password") as string
+export const login = async (formData: FormData) => {
+  const session = await getSession();
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+  // DATABASE OPARATION
+  console.log(email, password);
 
-   console.log(email, password)
+  session.email = email;
+
+  await session.save();
+
+  redirect("/profile");
+};
+
+export const signup = async (prevState:{
+   error: undefined | string
+}, formData:FormData) => {
+   const name = formData.get("name")
+   const email = formData.get("email")
+   const password = formData.get("password")
+   const image = formData.get("image")
+   const confirmedPass = formData.get("confirm-password")
+
+   if(password !== confirmedPass) {
+      return {error: "Password does not match!"}
+   }
 
 
-   session.email = email
+   try {
+      const response = await axios.post('http://localhost:8080/upload', formData, {
+          headers: {
+              'Content-Type': 'multipart/form-data',
+          },
+      });
 
-  await session.save()
+      console.log('Image URL:', response.data.imageUrl); // URL of the uploaded image
+  } catch (errorMessage) {
+       return {error:'Error uploading image!'};
+  }
+   const user = {
+      name,
+      email,
+      image,
+      password,
+      confirmedPass
+   }
+   console.log(user)
+};
 
-  redirect("/profile")
-
-
-}
-
-export const signup = async () => {
-    
-}
-
-
-export const logout = async () => {
-
-}
+export const logout = async () => {};
