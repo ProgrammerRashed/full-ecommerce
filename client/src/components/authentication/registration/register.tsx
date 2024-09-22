@@ -2,13 +2,23 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import registerImage from "../../../assets/auth/image-2.png";
 import { signup } from "@/actions";
 import { useFormState } from "react-dom";
-
+import toast from "react-hot-toast";
+import { useRouter } from 'next/navigation'
 const Register = () => {
+  const router = useRouter(); // Use the router for redirection
   const [state, formAction] = useFormState<any, FormData>(signup, null)
-  console.log(state)
+ // Trigger a toast on successful registration
+ if (state && state.status === "Success") {
+  toast.success("Registration successful!");
+
+      // Redirect after a short delay
+      setTimeout(() => {
+        router.push("/login"); // Use Next.js router for redirection
+      }, 1000);
+}
+
   return (
     <div className="w-full max-h-screen lg:grid lg:grid-cols-5 justify-center items-center overflow-hidden">
       {/* IMAGE */}
@@ -115,7 +125,10 @@ const Register = () => {
               Sign Up
             </Button>
           </form>
-      {state && <p className="mt-2 text-red-500">{state.error}</p>}
+    {/* Display error */}
+    {state && state.error && (
+            <p className="mt-2 text-red-500">{state.error}</p>
+          )}
           {/* LOGIN CTA */}
           <div className="my-5 w-full">
             <Link href="/login" className="w-full flex justify-between">

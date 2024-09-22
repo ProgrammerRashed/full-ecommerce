@@ -3,10 +3,10 @@ import User from "../../../models/User.js"
 
 export const doLogin = async (req, res, next) => {
   try {
-    const bodyUser = req.body;
+    const {email, password} = req.body;
     
     const dbUser = await User.findOne({
-      email: bodyUser.email,
+      email: email
     });
 
     if (!dbUser) {
@@ -17,7 +17,7 @@ export const doLogin = async (req, res, next) => {
       return;
     }
     const validPassword = await bcryptjs.compare(
-      bodyUser.password,
+      password,
       dbUser.password
     );
     if (!validPassword) {

@@ -1,10 +1,25 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import loginImage from "../../../assets/auth/image-1.png";
 import { login } from "@/actions";
+import { useFormState } from "react-dom";
+import toast from "react-hot-toast";
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+  const [state, formAction] = useFormState<any, FormData>(login, null)
+  const router = useRouter(); // Use the router for redirection
+  if (state && state.status === "Success") {
+    toast.success("Registration successful!");
+  
+        // Redirect after a short delay
+        setTimeout(() => {
+          router.push("/profile"); // Use Next.js router for redirection
+        }, 1000);
+  }
+  
   return (
     <div className="w-full h-screen lg:grid lg:grid-cols-5">
       {/* IMAGE */}
@@ -28,7 +43,7 @@ const Login = () => {
             <p className="text-muted-foreground text-sm">Please Login Here</p>
           </div>
           {/* LOGIN FORM */}
-          <form action={login}>
+          <form action={formAction}>
             {/* EMAIL INPUT */}
             <div className="grid w-full items-center gap-1.5">
               <label htmlFor="email">
@@ -62,7 +77,10 @@ const Login = () => {
               Login
             </Button>
           </form>
-
+ {/* Display error */}
+ {state && state.error && (
+            <p className="mt-2 text-red-500">{state.error}</p>
+          )}
           {/* LOGIN CTA */}
           <div className="mt-5 w-full flex justify-between gap-5 lg:gap-8">
             <Link

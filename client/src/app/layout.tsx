@@ -6,6 +6,7 @@ import MobileNav from "@/components/ui/navigation/MobileNav";
 import FooterComponent from "@/components/footer/FooterComponent";
 import ShopFeatures from "@/components/shop-features/ShopFeatures";
 import { usePathname } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -40,6 +41,7 @@ export default function RootLayout({
           </div>
         )}
         {/* MAIN APP */}
+        <Toaster position="bottom-center" />
         <div>{children}</div>
 
         {/* FOOTER */}
