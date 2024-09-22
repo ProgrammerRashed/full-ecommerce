@@ -7,19 +7,25 @@ import { login } from "@/actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation'
+import useClientSession from "@/lib/useClientSession";
+
 
 const Login = () => {
   const [state, formAction] = useFormState<any, FormData>(login, null)
   const router = useRouter(); // Use the router for redirection
   if (state && state.status === "Success") {
     toast.success("Registration successful!");
-  
-        // Redirect after a short delay
-        setTimeout(() => {
-          router.push("/profile"); // Use Next.js router for redirection
-        }, 1000);
+
+    // Redirect after a short delay
+    setTimeout(() => {
+      router.push("/profile"); // Use Next.js router for redirection
+    }, 1000);
   }
-  
+  const { session, loading } = useClientSession();
+
+  if (loading) return <p>Loading...</p>;
+  if (!session) return <p>No session found</p>;
+  console.log("LoginSession", session)
   return (
     <div className="w-full h-screen lg:grid lg:grid-cols-5">
       {/* IMAGE */}
@@ -77,8 +83,8 @@ const Login = () => {
               Login
             </Button>
           </form>
- {/* Display error */}
- {state && state.error && (
+          {/* Display error */}
+          {state && state.error && (
             <p className="mt-2 text-red-500">{state.error}</p>
           )}
           {/* LOGIN CTA */}

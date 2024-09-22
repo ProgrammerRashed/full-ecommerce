@@ -1,6 +1,7 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
+
 const app = express();
 
 import { globalErrorHandler } from "./utils/globalErrorHandler.js";
@@ -13,6 +14,12 @@ import uploadRoutes from "./routes/upload/index.js";
 
 // Apply middleware
 applyMiddleware(app);
+
+// Logging middleware
+app.use((req, res, next) => {
+  console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
+  next();
+});
 
 // Set up your routes
 app.use(authRoutes);
