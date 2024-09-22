@@ -1,46 +1,47 @@
-import bcryptjs from "bcryptjs"
-import User from "../../../models/User.js"
+import bcryptjs from "bcryptjs";
+import User from "../../../models/User.js";
 
 export const doSignup = async (req, res, next) => {
   try {
-    const user = req.body;
+    const {name, email, password, userType, profileImage} = req.body;
 
-    const isEmailAllReadyExist = await User.findOne({
-      email: user.email,
-    });
 
-    if (isEmailAllReadyExist) {
-      res.status(400).json({
+    // Check if the email already exists
+    const isEmailAlreadyExist = await User.findOne({ email: email });
+    if (isEmailAlreadyExist) {
+      return res.status(400).json({
         status: 400,
-        message: "Already Have an Account!!",
+        message: "Already have an account!",
       });
-      return;
     }
 
-   
+    // Hash the password
     const salt = await bcryptjs.genSalt(10);
-    const hashedPass = await bcryptjs.hash(user.password, salt);
+    const hashedPass = await bcryptjs.hash(password, salt);
 
-
+    // Create the new user
     const newUser = await User.create({
-      name: user.name,
-      image: user.image,
-      email: user.email,
+      name: name,
+      profileImage: profileImage,
+      email: email,
       password: hashedPass,
+      userType: userType,
     });
 
-    res.status(200).json({
+    res.status(201).json({
       status: 201,
       success: true,
-      message: "User Created Successfully",
+      message: "User created successfully",
       user: {
+        userID:newUser._id || null,
         name: newUser.name || null,
         email: newUser.email || null,
-        image: newUser.image || null,
+        profileImage: newUser.profileImage || null,
+        userType: newUser.userType || null,
       },
     });
   } catch (err) {
+    console.error("Signup error:", err);
     next(err);
   }
 };
-

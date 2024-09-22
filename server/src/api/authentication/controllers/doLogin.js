@@ -1,11 +1,10 @@
 import bcryptjs from "bcryptjs"
-import jwt from "jsonwebtoken"
 import User from "../../../models/User.js"
 
 export const doLogin = async (req, res, next) => {
   try {
     const bodyUser = req.body;
-
+    
     const dbUser = await User.findOne({
       email: bodyUser.email,
     });
@@ -33,20 +32,12 @@ export const doLogin = async (req, res, next) => {
       id: dbUser._id.toString(),
       name:dbUser.name,
       email:dbUser.email,
-      image: dbUser.image
+      profileImage: dbUser.profileImage,
+      userType: dbUser.userType
     }
     
-    const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: "24h",
-    });
-    console.log(token)
-    res
-      .cookie("token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
-      })
-      .send({ success: true, message: "login successful" });
+   
+    res.send({ success: true, user, message: "login successful" });
   } catch (err) {
     next(err);
   }

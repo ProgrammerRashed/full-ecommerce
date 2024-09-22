@@ -55,11 +55,12 @@ const Register = () => {
               <label htmlFor="name">
                 Choose Image 
               </label>
+          
               <input
                 name="image"
                 placeholder="Choose Profile Picture"
                 type="file"
-               
+               accept="image/*"
                 className="border border-border focus:outline-input rounded p-1 file:bg-muted file:border-none file:rounded file:mr-3 file:p-1 file:px-2 text-muted-foreground"
               />
             </div>
