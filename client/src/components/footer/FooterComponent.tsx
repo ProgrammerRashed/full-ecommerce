@@ -24,9 +24,9 @@ const FooterComponent = () => {
       <div className="flex items-end w-full">
         <footer className="w-full text-muted-foreground">
           {/* FOOTER CONTENT START */}
-          <div className="max-w-[1240px] mx-auto grid grid-cols-4 pt-10 px-2 md:px-3 lg:px-5">
+          <div className="max-w-[1240px] mx-auto grid lg:grid-cols-4 pt-10 px-2 md:px-3 lg:px-5">
             {/* LOGO INFO */}
-            <div className="">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start pb-10">
               <Link
                 href="/"
                 className="flex items-center justify-center font-medium text-black title-font md:justify-start"
@@ -43,11 +43,11 @@ const FooterComponent = () => {
             </div>
 
             {/* ABOUT US */}
-            <div className="">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
               <h2 className="mb-3 text-sm font-medium tracking-widest text-black uppercase title-font">
                 About
               </h2>
-              <nav className="mb-10 list-none">
+              <nav className="mb-10 list-none flex flex-col justify-center items-center lg:justify-start lg:items-start" >
                 <li className="mt-3">
                   <Link
                     href="/about"
@@ -76,11 +76,11 @@ const FooterComponent = () => {
             </div>
 
             {/* INFORMATION */}
-            <div className="">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
               <h2 className="mb-3 text-sm font-medium tracking-widest text-black uppercase title-font">
                 Information
               </h2>
-              <nav className="mb-10 list-none">
+              <nav className="mb-10 list-none flex flex-col justify-center items-center lg:justify-start lg:items-start">
                 <li className="mt-3">
                   <Link
                     href="terms"
@@ -125,11 +125,11 @@ const FooterComponent = () => {
             </div>
 
             {/* CONTACT */}
-            <div className="">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
               <h2 className="mb-3 text-sm font-medium tracking-widest text-black uppercase title-font">
                 Contact
               </h2>
-              <nav className="mb-10 list-none">
+              <nav className="mb-10 list-none flex flex-col justify-center items-center lg:justify-start lg:items-start">
                 <li className="mt-3 flex gap-2 items-center">
                   <FaSquareWhatsapp className="text-xl" />
                   <Link
@@ -143,11 +143,11 @@ const FooterComponent = () => {
                 </li>
                 <li className="mt-3 cursor-pointer hover:text-black flex items-center gap-2">
                   <MdEmail className="text-xl" />
-                  <p>support@zossgadget.com.bd</p>
+                  <a href="mailto:contact@zossgadget.com.bd">contact@zossgadget.com.bd</a>
                 </li>
                 <li className="mt-3 cursor-pointer hover:text-black flex items-center gap-2">
                   <FaSquarePhone className="text-xl" />
-                  <p> +8801318-944400</p>
+                  <a href="tel:+8801318944400"> +8801318-944400</a>
                 </li>
                 <li className="mt-3 cursor-pointer hover:text-black flex items-start gap-2">
                   <FaLocationDot className="text-xl" />
@@ -158,7 +158,7 @@ const FooterComponent = () => {
                 <li className="mt-1 cursor-pointer  flex items-center gap-2">
                   <FaMapLocationDot className="text-xl" />
                   <Link
-                    href="https://maps.app.goo.gl/Pc9c16Z2zgRtJScY6"
+                    href="https://maps.app.goo.gl/Yk3r3KoNaGr3Wo117"
                     rel="noopener noreferrer"
                     target="_blank"
                     className="text-blue-500 hover:underline"
@@ -170,9 +170,9 @@ const FooterComponent = () => {
             </div>
           </div>
           {/* PAYMENT METHOD DISPLAY */}
-          <div className="payment-methods-display flex gap-5 items-center justify-center max-w-[1240px] px-2 md:px-3 lg:px-5 mx-auto py-5">
+          <div className="payment-methods-display flex flex-col lg:flex-row gap-2 lg:gap-5 items-center justify-center max-w-[1240px] px-2 md:px-3 lg:px-5 mx-auto py-5">
             <p className="text-xl text-foreground">Pay With</p>
-            <div className="methods grid grid-cols-8 gap-4 border-l-2 border-black">
+            <div className="methods grid grid-cols-8 gap-4 lg:border-l-2  border-t-2 lg:border-t-0 border-l-0 border-black pt-3 lg:pt-0">
               <div className="ml-2 method-card bg-white flex justify-center items-center rounded overflow-hidden">
                 <Image
                   width={100}
@@ -243,7 +243,7 @@ const FooterComponent = () => {
           {/* COPYRIGHT */}
           <div className="bg-foreground text-white">
             <div className="max-w-[1240px] mx-auto py-4 px-2 md:px-3 lg:px-5 ">
-              <p className="text-sm capitalize lg:text-center">
+              <p className="text-sm capitalize text-center">
                 &copy; 2024 ZossGadget All rights reserved
               </p>
             </div>

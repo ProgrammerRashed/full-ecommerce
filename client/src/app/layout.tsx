@@ -5,8 +5,8 @@ import FooterComponent from "@/components/footer/FooterComponent";
 import ShopFeatures from "@/components/shop-features/ShopFeatures";
 import { usePathname } from "next/navigation";
 import { Toaster } from "react-hot-toast";
-import DesktopNavbar from "@/components/navbars/DesktopNavbar";
-import MobileNavbar from "@/components/navbars/MobileNavbar";
+import MainNavbar from "@/components/navbar/MainNavbar";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,15 +29,7 @@ export default function RootLayout({
           targetPathname !== "/registration" &&
           targetPathname !== "/forgot-password" && (
             <div>
-              {/* DESKTOP NAV */}
-
-              <DesktopNavbar />
-
-              {/* MOBILE NAV */}
-
-              <MobileNavbar />
-
-
+              <MainNavbar />
             </div>
           )}
 

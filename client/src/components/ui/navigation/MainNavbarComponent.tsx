@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "../button";
 import Image from "next/image";
 import zossGadgetLogo from "../../../assets/zossgadget-logo.png";
-const DesktopNav = ({ session }: { session: any | null }) => {
+const MainNavbarComponent = ({ session }: { session: any | null }) => {
   return (
     <nav className="flex justify-between max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="logo flex justify-center items-center">
@@ -34,4 +34,4 @@ const DesktopNav = ({ session }: { session: any | null }) => {
   );
 };
 
-export default DesktopNav;
+export default MainNavbarComponent;

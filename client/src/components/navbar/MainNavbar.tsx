@@ -1,21 +1,21 @@
 "use client"
 import useClientSession from "@/lib/useClientSession";
-import DesktopNav from "../ui/navigation/DesktopNav";
+import MainNavbarComponent from "../ui/navigation/MainNavbarComponent";
 
 
 
 
 
-const DesktopNavbar = () => {
+const MainNavbar = () => {
     const { loading, session } = useClientSession()
 
     return (
-        <div className="hidden lg:block">
+        <div className="block">
             <div className="p-3 rounded">
-                <DesktopNav session={session} />
+                <MainNavbarComponent session={session} />
             </div>
         </div>
     );
 }
 
-export default DesktopNavbar
+export default MainNavbar
