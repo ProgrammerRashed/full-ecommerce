@@ -13,7 +13,7 @@ const DealOfTheMonth = () => {
   const bestProductOfTheMonth = filteredData[0];
   return (
     <div className="grid md:grid-cols-7  overflow-hidden">
-      <div className="content md:col-span-4 space-y-4 order-2 md:order-1" >
+      <div className="content pr-3 md:col-span-4 space-y-4 order-2 md:order-1" >
         <h1 className="text-xl lg:text-xl font-medium mt-5 md:mt-0">Deal of the Month</h1>
         <p>
           Get ready for a shopping Experience like never before with our Deal of
