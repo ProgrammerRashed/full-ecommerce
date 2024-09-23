@@ -1,24 +1,23 @@
 import Link from "next/link";
-import React from "react";
 import { IoMdHome } from "react-icons/io";
-import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { FaShop } from "react-icons/fa6";
 import { ProfileDropdownMenu } from "./ProfileDropdown";
-const MobileNav = () => {
+const MobileNav = ({ session }: { session: any | null }) => {
   return (
-    <div className="bg-white p-3 w-full">
-      <nav className="flex gap-3  mx-auto justify-between items-center px-3">
-        <Link href="/">
-          <IoMdHome />
+    <div className="bg-white w-screen fixed z-[9999] bottom-0">
+      <nav className="flex border justify-between items-center w-full">
+        <Link href="/" className="pointer   h-[40px] w-full flex items-center justify-center">
+          <IoMdHome className="h-7 w-7" />
         </Link>
-        <Link href="/shop">
-          <FaShop />
+        <Link href="/shop" className="pointer   h-[40px] w-full flex items-center justify-center">
+          <FaShop className="h-7 w-7"/>
         </Link>
-        <Link href="/cart">
-          <FaShoppingCart />
+        <Link href="/cart" className="pointer   h-[40px] w-full flex items-center justify-center">
+          <FaShoppingCart  className="h-7 w-7"/>
         </Link>
-        <div >
-          <ProfileDropdownMenu/>
+        <div className="pointer   h-[40px] w-full flex items-center justify-center">
+          <ProfileDropdownMenu />
         </div>
       </nav>
     </div>
