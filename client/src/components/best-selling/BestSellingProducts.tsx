@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { PaginationComponent } from "../shared/PaginationComponent";
 import ProductCard from "../shared/ProductCard";
 import getJsonData from "@/lib/getJsonData";
+
+import BestSellingProductSlider from "./BestSellingProductSlider";
 
 const BestSellingProducts = () => {
   const data = getJsonData();
@@ -17,15 +18,13 @@ const BestSellingProducts = () => {
         </Link>
       </div>
 
-      <div className="best-selling-products grid grid-cols-4 gap-5">
-        {filteredData.map((product, index) => (
-          <div key={index}>
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
       <div className="mt-10">
-        <PaginationComponent />
+        {/* <PaginationComponent /> */}
+        <div className="mx-auto">
+          <BestSellingProductSlider  products={filteredData}/>
+        </div>
+
+
       </div>
     </div>
   );

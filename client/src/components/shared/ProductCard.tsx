@@ -7,14 +7,14 @@ const ProductCard = ({product}:any) => {
   
   return (
    
-    <div className="group shadow-sm flex flex-col hover:scale-[101%] hover:shadow w-full h-full rounded overflow-hidden transition-all ease-in-out">
-      <div className="product-image relative h-[300px] w-full transition-all ease-in-out overflow-hidden">
+    <div className="group min-h-[400px] shadow-lg flex flex-col w-full h-full rounded overflow-hidden transition-all ease-in-out">
+      <div className="product-image relative  w-full transition-all ease-in-out overflow-hidden">
       <Link href={`/shop/${product.id}`}>
         <Image
           src={product?.image|| placeholderImage}
           width={300}
           height={300}
-          className="object-cover object-center w-full h-full overflow-hidden"
+          className="object-cover object-center w-full h-full overflow-hidden hover:scale-[95%]  transition-all ease-in-out"
           alt={product?.name}
      
         />
