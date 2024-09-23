@@ -13,6 +13,8 @@ const HeroSection = () => {
           alt="hero-banner"
           loading="lazy"
           className="h-full w-full object-cover"
+   	placeholder="blur"
+     quality={80}
         />
       </div>
 

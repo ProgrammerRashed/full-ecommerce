@@ -8,7 +8,7 @@ const DealOfTheDay = () => {
     product.tags.some((singleTag) => singleTag.includes("dealoftheday"))).slice(0, 4)
   );
   return (
-    <div className="py-20 ">
+    <div className="py-0 ">
       <div className="flex w-full">
       <div className="head flex justify-between items-center w-full">
           <h1 className="text-xl font-bold">Deals of the Day</h1>

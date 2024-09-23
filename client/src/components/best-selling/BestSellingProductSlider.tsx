@@ -22,7 +22,11 @@ const BestSellingProductSlider = ({ products }: any) => {
     onMouseLeave={plugin.current.reset}
     opts={{ align: "start", loop: true }}
     >
-      <CarouselContent className="-ml-1 pb-6">
+         <div className="justify-end gap-4  absolute w-full -translate-y-full hidden md:flex">
+      <CarouselPrevious className="!relative translate-x-0 translate-y-0 top-0 left-0 right-0"/>
+      <CarouselNext  className="!relative translate-x-0 translate-y-0 top-0 left-0 right-0"/>
+      </div>
+      <CarouselContent className="pb-6">
         {products.map((product: any, index: number) => (
           <CarouselItem key={index} className="pl-3 basis-10/12 md:basis-1/2 lg:basis-1/3">
             <div className="p-1 h-full select-none">
@@ -32,8 +36,8 @@ const BestSellingProductSlider = ({ products }: any) => {
         ))}
 
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+   
+
     </Carousel>
   )
 }
