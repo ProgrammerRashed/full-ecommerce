@@ -7,18 +7,10 @@ import { login } from "@/actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation';
-import useClientSession from "@/lib/useClientSession";
-import { useEffect } from "react";
 
 const Login = () => {
   const [state, formAction] = useFormState<any, FormData>(login, null);
   const router = useRouter();
-  const { session, loading } = useClientSession();
-  if (loading) return <p>Loading...</p>;
-
-  if (!loading && session) {
-    router.push("/"); 
-  }
 
   if (state && state.status === "Success") {
     toast.success("Registration successful!");

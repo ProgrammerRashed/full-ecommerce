@@ -1,3 +1,4 @@
+import { logout } from "@/actions";
 import ContinueShoppingCard from "@/components/cart/ContinueShoppingCard";
 import type { Metadata } from "next";
 
@@ -17,6 +18,8 @@ export default function ProfileLayout({
   children: React.ReactNode;
 }) {
 
+
+
   return (
     <div className="max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
       <h1 className="text-4xl font-bold">My Profile</h1>
@@ -27,7 +30,9 @@ export default function ProfileLayout({
             <nav className="flex flex-col justify-start items-start text-lg gap-1">
               <Link href="/profile/personal-info" className="flex gap-2 items-center p-2 hover:bg-muted/70 w-full"><FaRegUser/> Personal Information</Link>
               <Link href="/profile/orders" className="flex gap-2 items-center p-2 hover:bg-muted/70 w-full"><FiShoppingBag/> Orders</Link>
-              <Link href="/profile/orders" className="flex gap-2 items-center p-2 hover:bg-muted/70 w-full"><IoMdLogOut/>Logout</Link>
+              <form action={logout}>
+              <button type="submit" className="flex gap-2 items-center p-2 hover:bg-muted/70 w-full"><IoMdLogOut/>Logout</button>
+              </form>
             </nav>
         
         </div>

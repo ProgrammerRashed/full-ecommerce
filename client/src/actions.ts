@@ -5,6 +5,7 @@ import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 
 import axios from "axios";
+import { redirect } from "next/navigation";
 export const getSession = async () => {
   const session = await getIronSession<SessionData>(cookies(), sessionOptions);
   return session;
@@ -107,4 +108,8 @@ export const signup = async (
 };
 
 
-export const logout = async () => {};
+export const logout = async () => {
+const session = await getSession()
+  session.destroy()
+  redirect("/")
+};
