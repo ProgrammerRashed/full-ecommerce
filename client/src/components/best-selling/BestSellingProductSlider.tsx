@@ -1,4 +1,6 @@
-
+"use client"
+import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +12,16 @@ import ProductCard from "../shared/ProductCard"
 
 
 const BestSellingProductSlider = ({ products }: any) => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
   return (
-    <Carousel className="w-full ">
+    <Carousel   plugins={[plugin.current]}
+    className="w-full"
+    onMouseEnter={plugin.current.stop}
+    onMouseLeave={plugin.current.reset}
+    opts={{ align: "start", loop: true }}
+    >
       <CarouselContent className="-ml-1 pb-6">
         {products.map((product: any, index: number) => (
           <CarouselItem key={index} className="pl-3 basis-10/12 md:basis-1/2 lg:basis-1/3">
