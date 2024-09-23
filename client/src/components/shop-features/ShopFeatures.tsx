@@ -4,7 +4,7 @@ import { BiSupport } from "react-icons/bi";
 import { FaCcMastercard } from "react-icons/fa";
 const ShopFeatures = () => {
   return (
-    <div className="max-w-[1240px] mx-auto py-10 px-2 md:px-3 lg:px-5">
+    <div className="max-w-[1440px] mx-auto py-10 px-2 md:px-3 lg:px-5">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="card space-y-2 border rounded p-3">
           <FaShippingFast className="text-2xl" />

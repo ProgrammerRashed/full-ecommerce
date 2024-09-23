@@ -1,7 +1,7 @@
 
 const PrivacyPage = () => {
   return (
-    <div className="max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
+    <div className="max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
 
 <h1 className="bold"><strong>Privacy Policy for Zossgadget</strong> </h1>
 <br />

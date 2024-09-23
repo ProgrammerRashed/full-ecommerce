@@ -24,7 +24,7 @@ const FooterComponent = () => {
       <div className="flex items-end w-full">
         <footer className="w-full text-muted-foreground">
           {/* FOOTER CONTENT START */}
-          <div className="max-w-[1240px] mx-auto grid lg:grid-cols-4 pt-10 px-2 md:px-3 lg:px-5">
+          <div className="max-w-[1440px] mx-auto grid lg:grid-cols-4 pt-10 px-2 md:px-3 lg:px-5">
             {/* LOGO INFO */}
             <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start pb-10">
               <Link
@@ -170,7 +170,7 @@ const FooterComponent = () => {
             </div>
           </div>
           {/* PAYMENT METHOD DISPLAY */}
-          <div className="payment-methods-display flex flex-col lg:flex-row gap-2 lg:gap-5 items-center justify-center max-w-[1240px] px-2 md:px-3 lg:px-5 mx-auto py-5">
+          <div className="payment-methods-display flex flex-col lg:flex-row gap-2 lg:gap-5 items-center justify-center max-w-[1440px] px-2 md:px-3 lg:px-5 mx-auto py-5">
             <p className="text-xl text-foreground">Pay With</p>
             <div className="methods grid grid-cols-8 gap-4 lg:border-l-2  border-t-2 lg:border-t-0 border-l-0 border-black pt-3 lg:pt-0">
               <div className="ml-2 method-card bg-white flex justify-center items-center rounded overflow-hidden">
@@ -242,7 +242,7 @@ const FooterComponent = () => {
           </div>
           {/* COPYRIGHT */}
           <div className="bg-foreground text-white">
-            <div className="max-w-[1240px] mx-auto py-4 px-2 md:px-3 lg:px-5 ">
+            <div className="max-w-[1440px] mx-auto py-4 px-2 md:px-3 lg:px-5 ">
               <p className="text-sm capitalize text-center">
                 &copy; 2024 ZossGadget All rights reserved
               </p>

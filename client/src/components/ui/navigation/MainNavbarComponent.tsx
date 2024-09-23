@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Button } from "../button";
 import Image from "next/image";
 import zossGadgetLogo from "../../../assets/zossgadget-logo.png";
+import { ProfileDropdownMenu } from "./ProfileDropdown";
 const MainNavbarComponent = ({ session }: { session: any | null }) => {
+  
   return (
-    <nav className="flex justify-between max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
+    <nav className="flex justify-between max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="logo flex justify-center items-center">
         <Link href="/">
           <Image
@@ -23,9 +25,7 @@ const MainNavbarComponent = ({ session }: { session: any | null }) => {
           <Link href="/shop">Shop</Link>
         </li>
         <li>
-          {session?.email ? <Link href="/profile">
-            <Button>Profile</Button>
-          </Link> : <Link href="/login">
+          {!session?.email ? <ProfileDropdownMenu/> : <Link href="/login">
             <Button>Login</Button>
           </Link>}
         </li>

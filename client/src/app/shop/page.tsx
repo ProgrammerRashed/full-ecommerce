@@ -23,7 +23,7 @@ const AllProductShop = () => {
       self.findIndex((singleProduct) => singleProduct.brand === product.brand)
   );
   return (
-    <div className="grid grid-cols-12 max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
+    <div className="grid grid-cols-12 max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="sidebar col-span-3 pb-10">
         {/* FILTER BY PRODUCT CATEGORY */}
         <div className="filter-by-cat">

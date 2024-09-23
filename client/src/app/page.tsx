@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <main className="website min-h-screen max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
+    <main className="website min-h-screen ">
      
 
       {/* BANNER SECTION / HERO SECTION */}
@@ -18,20 +18,20 @@ export default function Home() {
         <HeroSection />
       </section>
        {/* SHOP BY CATEGORY SECTION */}
-       <section className="shop-by-category">
+       <section className="shop-by-category max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
         <ShopByCategory />
       </section>
        {/* DEALS OF THE DAY SECTION */}
-       <section className="deals-of-the-day">
+       <section className="deals-of-the-day max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
         <DealOfTheDay />
       </section>
        {/* BEST SELLING PRODUCTS SECTION */}
-       <section className="best-selling-products">
+       <section className="best-selling-products max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
         <BestSellingProducts />
       </section>
 
        {/* DEAL OF THE MONTH SECTION */}
-       <section className="best-selling-products">
+       <section className="best-selling-products max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
         <DealOfTheMonth />
       </section>
     </main>

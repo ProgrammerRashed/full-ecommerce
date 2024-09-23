@@ -1,6 +1,6 @@
 const RefundPage = () => {
     return (
-      <div className="max-w-[1240px] mx-auto px-2 md:px-3 lg:px-5">
+      <div className="max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
         <h2 className="font-bold text-xl">Zossgadget এর রিফান্ড পলিসিঃ</h2>
         <p>
           পেমেন্ট করা অর্ডার এর প্রোডাক্ট যদি স্টক না থাকে বা কোন প্রোডাক্ট এর

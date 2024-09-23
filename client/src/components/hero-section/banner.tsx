@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const HeroSection = () => {
   return (
-    <div className="relative h-full">
+    <div className="relative h-full w-full ">
       <div className="absolute -z-10 rounded-md overflow-hidden h-full w-full ">
         <Image
           src={bgImage}         
@@ -17,7 +17,7 @@ const HeroSection = () => {
       </div>
 
       {/* CONTENT */}
-      <div className="h-full flex items-center">
+      <div className="h-full flex items-center max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
         <div className="flex flex-col gap-5 justify-center p-8 mt-20">
           <div className="text-2xl lg:text-5xl font-bold lg:space-y-3">
             <p>Unleash Innovation </p>
