@@ -15,9 +15,9 @@ const CheckoutComponent = () => {
   const productName =
     "FiFine K669B Microphone- USB Studio Condenser Microphone For YouTube Studio";
   return (
-    <div className="grid grid-cols-12 gap-5">
+    <div className="grid lg:grid-cols-12 gap-5">
       {/* BILLING DETAILS */}
-      <div className="col-span-6">
+      <div className="lg:col-span-6">
         <h1 className="text-xl font-bold my-4">Billing Details</h1>
         <div>
           <form>
@@ -129,7 +129,7 @@ const CheckoutComponent = () => {
       </div>
 
       {/* ORDER DETAILS */}
-      <div className="col-span-6">
+      <div className="lg:col-span-6">
         <div className="cart-summary">
           <h1 className="text-xl font-bold my-4">Your Order</h1>
 
@@ -206,7 +206,7 @@ const CheckoutComponent = () => {
               <div className="payment-options">
                 <RadioGroup
                   defaultValue="full"
-                  className="flex justify-between items-center"
+                  className="flex flex-col lg:flex-row justify-between lg:items-center"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex gap-2 items-center">
@@ -237,3 +237,5 @@ const CheckoutComponent = () => {
 };
 
 export default CheckoutComponent;
+
+
