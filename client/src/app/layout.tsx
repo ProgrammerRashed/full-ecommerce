@@ -48,11 +48,9 @@ export default function RootLayout({
             targetPathname !== "/registration" &&
             targetPathname !== "/forgot-password" && (
               <div>
-                {targetPathname !== "/shop" && (
-                  <div>
-                    <ShopFeatures />
-                  </div>
-                )}
+
+                <ShopFeatures />
+
 
                 <div>
                   <FooterComponent />

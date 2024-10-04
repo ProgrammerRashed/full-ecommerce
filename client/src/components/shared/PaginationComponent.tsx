@@ -1,20 +1,21 @@
 import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-  } from "@/components/ui/pagination"
-  
-  export function PaginationComponent() {
-    return (
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#" />
-          </PaginationItem>
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
+export function PaginationComponent() {
+  return (
+    <Pagination>
+      <PaginationContent className="w-full flex justify-between">
+        <PaginationItem>
+          <PaginationPrevious href="#" />
+        </PaginationItem>
+        <div className="flex gap-2">
           <PaginationItem>
             <PaginationLink href="#">1</PaginationLink>
           </PaginationItem>
@@ -29,11 +30,11 @@ import {
           <PaginationItem>
             <PaginationEllipsis />
           </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
-    )
-  }
-  
+        </div>
+        <PaginationItem>
+          <PaginationNext href="#" />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  )
+}
