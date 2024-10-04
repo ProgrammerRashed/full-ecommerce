@@ -1,10 +1,16 @@
-"use client"
+
 import { PaginationComponent } from "@/components/shared/PaginationComponent";
-import FilterDrawerClient from "@/components/shop/FilterDrawer";
+
 import ProductsPage from "@/components/shop/ProductsPage";
 import SidebarFilters from "@/components/shop/SidebarFilters";
+import TopSearchBar from "@/components/shop/TopSearchBar";
 import getJsonData from "@/lib/getJsonData";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "SHOP PAGE || ZossGadget",
+  description: "ALL PRODUCTS ",
+};
 
 
 const AllProductShop = () => {
@@ -14,13 +20,14 @@ const AllProductShop = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
 
-<FilterDrawerClient/>
+
       <div className="grid lg:grid-cols-12 ">
-        <div className="sidebar lg:col-span-3 pb-10 hidden lg:block">
+        <div className="sidebar lg:col-span-3 pb-10 hidden lg:block py-4">
           <SidebarFilters />
         </div>
-        <div className="products lg:col-span-9">
-          <h4 className="font-bold mb-3">Showing 1 - 10 of 15 Products</h4>
+        <div className="products lg:col-span-9 overflow-hidden">
+          <TopSearchBar />
+
           <div>
             <ProductsPage data={data} />
           </div>

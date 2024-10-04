@@ -6,14 +6,16 @@ import { ProfileDropdownMenu } from "./ProfileDropdown";
 const MainNavbarComponent = ({ session }: { session: any | null }) => {
   
   return (
-    <nav className="flex justify-between max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5 ">
+    <nav className="flex justify-between max-w-[1440px] mx-auto px-2 md:px-3 lg:px-5">
       <div className="logo flex justify-center items-center">
         <Link href="/">
           <Image
             src={zossGadgetLogo}
             alt="zossgadget logo"
-            height={80}
+            height={53}
             width={230}
+            quality={80}
+            priority={true}
           />
         </Link>
       </div>

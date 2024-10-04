@@ -10,8 +10,8 @@ const MainNavbar = () => {
     const { loading, session } = useClientSession()
 
     return (
-        <div className="block shadow-lg py-5">
-            <div className="p-3 rounded">
+        <div className="block shadow-lg py-2">
+            <div className="rounded">
                 <MainNavbarComponent session={session} />
             </div>
         </div>

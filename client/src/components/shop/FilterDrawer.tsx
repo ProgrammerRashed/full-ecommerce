@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect } from 'react';
 import SidebarFilters from './SidebarFilters';
+import { Button } from '../ui/button';
+import { SlidersHorizontal } from 'lucide-react';
 
 const FilterDrawerClient = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,13 +32,10 @@ const FilterDrawerClient = () => {
 
   return (
     <>
-      <button
-        className="px-4 py-2 bg-blue-500 text-black rounded-md hover:bg-blue-600"
-        onClick={toggleSidebar}
-      >
-        Open Sidebar
-      </button>
-
+      <Button variant="outline"   onClick={toggleSidebar} className="flex items-center space-x-2">
+          <SlidersHorizontal className="w-4 h-4" />
+          <span>Filter</span>
+        </Button>
       {/* Sidebar drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white text-black transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
