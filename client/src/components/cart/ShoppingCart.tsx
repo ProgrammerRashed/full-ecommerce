@@ -105,7 +105,7 @@ const ShoppingCart = () => {
         </div>
         {/* CART CTA */}
         <div>
-            <Link href="/checkout" className="w-full">Checkout</Link>
+            <Button><Link href="/checkout" className="w-full">Checkout</Link></Button>
         </div>
         </div>
       </div>
