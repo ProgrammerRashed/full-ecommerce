@@ -10,6 +10,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { useState } from "react";
 
 interface PaginationComponentProps {
   currentPage: number;
@@ -25,20 +26,27 @@ export function PaginationComponent({
   const totalPages = Math.ceil(totalItems / limit); // Calculate total pages
   const router = useRouter();
 
-  const handlePageChange = (newPage: number) => {
+  const handlePageChange = async (newPage: number) => {
+    if (newPage < 1 || newPage > totalPages) return; // Prevent out-of-bounds
     const skip = (newPage - 1) * limit;
+
+    // Simulating an API call with a delay (remove this in production)
+    await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate network delay
+
     router.push(`?page=${newPage}&skip=${skip}&limit=${limit}`, { scroll: false });
   };
 
   const getPaginationItems = () => {
     const items = [];
-    const showEllipsis = (condition: boolean) => condition && <PaginationEllipsis />;
+    const showEllipsis = (condition: boolean) => condition ? <PaginationEllipsis key={`ellipsis-${Math.random()}`} /> : null; // Ensure unique key for ellipsis
 
     // Show first page
-    if (currentPage > 1) {
+    if (totalPages > 1) {
       items.push(
         <PaginationItem key={1}>
-          <PaginationLink onClick={() => handlePageChange(1)}>1</PaginationLink>
+          <PaginationLink onClick={() => handlePageChange(1)} isActive={currentPage === 1}>
+            1
+          </PaginationLink>
         </PaginationItem>
       );
     }
@@ -56,7 +64,7 @@ export function PaginationComponent({
         <PaginationItem key={page}>
           <PaginationLink
             onClick={() => handlePageChange(page)}
-            isActive={page === currentPage}
+            isActive={page === currentPage} // Set isActive for current page
           >
             {page}
           </PaginationLink>
@@ -73,7 +81,7 @@ export function PaginationComponent({
     if (totalPages > 1) {
       items.push(
         <PaginationItem key={totalPages}>
-          <PaginationLink onClick={() => handlePageChange(totalPages)}>
+          <PaginationLink onClick={() => handlePageChange(totalPages)} isActive={currentPage === totalPages}>
             {totalPages}
           </PaginationLink>
         </PaginationItem>
@@ -92,7 +100,7 @@ export function PaginationComponent({
             className={currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}
           />
         </PaginationItem>
-        <div className="flex gap-2">
+        <div className="lg:flex gap-2 hidden">
           {totalPages > 0 && getPaginationItems()}
         </div>
         <PaginationItem>

@@ -1,25 +1,12 @@
 "use client"
+import { useCartStore } from "../../../store/cartStore";
 import { Button } from "../ui/button";
 
-const AddToCartButton = ({ id }: any) => {
+const AddToCartButton = ({ id, name, price, quantity, image }: any) => {
+    const { addItem } = useCartStore();
+  
     const handleAddToCart = () => {
-        const receivedProductId = id;
-        const localItemsString = localStorage.getItem("cartProducts");
-        let localItems: string[] = [];
-    
-        if (localItemsString) {
-            localItems = JSON.parse(localItemsString);
-        }
-    
-        if (localItems) {
-            let updatedProducts = [...localItems, receivedProductId];
-            localStorage.setItem("cartProducts", JSON.stringify(updatedProducts));
-        } else {
-            let products: string[] = [];
-            products.push(receivedProductId);
-            localStorage.setItem("cartProducts", JSON.stringify(products));
-        }
-       
+        addItem( {id, name, price, quantity, image})
     };
     
     

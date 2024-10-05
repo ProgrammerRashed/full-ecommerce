@@ -3,46 +3,48 @@ import { FaStar } from "react-icons/fa";
 import placeholderImage from "../../assets/banner-bg.jpg"
 import Link from "next/link";
 import AddToCartButton from "./AddToCartButton";
-const ProductCard = ({product}:any) => {
-  
+const ProductCard = ({ product }: any) => {
+
   return (
-   
+
     <div className="group border min-h-[400px] shadow-lg flex flex-col w-full h-full rounded overflow-hidden transition-all ease-in-out">
       <div className="product-image relative  w-full transition-all ease-in-out overflow-hidden">
-      <Link href={`/shop/${product.id}`}>
-        <Image
-          src={product?.thumbnail|| placeholderImage}
-          width={300}
-          height={300}
-          className="object-contain  object-center w-full h-[300px] overflow-hidden hover:scale-[95%]  transition-all ease-in-out"
-          alt={product?.title}
-     
-        />
+        <Link href={`/shop/${product.id}`}>
+          <Image
+            src={product?.thumbnail || placeholderImage}
+            width={300}
+            height={300}
+            className="object-contain  object-center w-full h-[300px] overflow-hidden hover:scale-[95%]  transition-all ease-in-out"
+            alt={product?.title}
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD/4QAYRXhpZgAATU0AKgAAAAgAAkAAAAIABkAAQAAAAMAAAABAABAAEAAAABAAAAAQBAAAABAAAABgAAABIBAwABAAAAAQAAABoBBQABAAAAAQAAABsBBQABAAAAAQAAACgBAwABAAAAAgAAADIBAgAUAAAAAgAAADoCAgAeAAAAAgAAADwCAgAUAAAAAgAAAEICAwABAAAAAQAAAEaCAwABAAAAAQAAAEoCAwABAAAAAQAAAEoAAAIABAABAAAAAAAAAAAAAAAAAAAAAA=="
+            loading="lazy"
+            quality={70}
+          />
         </Link>
         <div className="cta add-to-cart z-30 absolute w-full bottom-0  h-0 group-hover:h-10 overflow-hidden transition-all ease-in-out">
-        <AddToCartButton id={product.id}></AddToCartButton>
+          <AddToCartButton id={product.id} name={product.title} price={product.price} quantity={1} image={product.thumbnail}></AddToCartButton>
         </div>
       </div>
       <Link href={`/shop/${product.id}`}>
-      <div className="product-details space-y-2 p-2 overflow-hidden">
-        
+        <div className="product-details space-y-2 p-2 overflow-hidden">
+
           <h1 className="font-medium line-clamp-2">
-           {product?.title}
+            {product?.title}
           </h1>
-       
-        <div className="flex justify-between items-center">
-          <h3 className="price font-bold">
-            <span className="taka">৳</span>{product?.price}.00
-          </h3>
-          <div className="rating flex gap-1 items-center">
-           <p><FaStar className=""/></p>
-            <p className="rating-count text-muted-foreground">(5)</p>
+
+          <div className="flex justify-between items-center">
+            <h3 className="price font-bold">
+              <span className="taka">৳</span>{product?.price}.00
+            </h3>
+            <div className="rating flex gap-1 items-center">
+              <p><FaStar className="" /></p>
+              <p className="rating-count text-muted-foreground">(5)</p>
+            </div>
           </div>
         </div>
-      </div>
       </Link>
     </div>
-  
+
   );
 };
 

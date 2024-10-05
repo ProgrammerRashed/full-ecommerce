@@ -4,7 +4,7 @@ import { PaginationComponent } from "@/components/shared/PaginationComponent";
 import ProductsPage from "@/components/shop/ProductsPage";
 import SidebarFilters from "@/components/shop/SidebarFilters";
 import TopSearchBar from "@/components/shop/TopSearchBar";
-import { getProductData } from "@/lib";
+import { getProductData } from "@/lib/utils";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const AllProductShop = async ({ searchParams }: { searchParams: SearchParams }) 
   
   const data = await getProductData(page,skip,limit, shortBy,);
   const products = Array.isArray(data) ? data : data.products || [];
-const totalItems = data.total
+  const totalItems = data.total
 
 
   return (

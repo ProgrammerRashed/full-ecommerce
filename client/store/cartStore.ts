@@ -1,12 +1,13 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-
+// const { items, total,addItem, removeItem, clearCart } = useCartStore();
 // Define the CartItem interface
 interface CartItem {
   id: string;
   name: string;
   price: number;
   quantity: number;
+  image: string;
 }
 
 // Define the CartState interface
