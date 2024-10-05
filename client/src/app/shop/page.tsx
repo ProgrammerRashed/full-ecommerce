@@ -4,17 +4,30 @@ import { PaginationComponent } from "@/components/shared/PaginationComponent";
 import ProductsPage from "@/components/shop/ProductsPage";
 import SidebarFilters from "@/components/shop/SidebarFilters";
 import TopSearchBar from "@/components/shop/TopSearchBar";
-import getJsonData from "@/lib/getJsonData";
+import { getProductData } from "@/lib";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "SHOP PAGE || ZossGadget",
   description: "ALL PRODUCTS ",
 };
+interface SearchParams {
+  page?: string;
+  search?: string;
+  limit?: string;
+  skip?: string;
+  short?: string;
+}
 
-
-const AllProductShop = () => {
-  const data = getJsonData();
+const AllProductShop = async ({ searchParams }: { searchParams: SearchParams }) => {
+  const page = parseInt(searchParams["page"] as string) || 1; 
+  const skip = parseInt(searchParams["skip"] as string) || 0
+  const limit = parseInt(searchParams["limit"] as string) || 10; 
+  const shortBy = searchParams["short"] || "";
+  
+  const data = await getProductData(page,skip,limit, shortBy,);
+  const products = Array.isArray(data) ? data : data.products || [];
+const totalItems = data.total
 
 
   return (
@@ -29,10 +42,10 @@ const AllProductShop = () => {
           <TopSearchBar />
 
           <div>
-            <ProductsPage data={data} />
+            <ProductsPage products={products}/>
           </div>
           <div className="my-10 w-full mx-auto">
-            <PaginationComponent />
+            <PaginationComponent currentPage={page} totalItems={ totalItems || 0} limit={limit} />
           </div>
         </div>
       </div>

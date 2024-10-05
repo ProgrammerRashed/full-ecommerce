@@ -11,11 +11,11 @@ const ProductCard = ({product}:any) => {
       <div className="product-image relative  w-full transition-all ease-in-out overflow-hidden">
       <Link href={`/shop/${product.id}`}>
         <Image
-          src={product?.image|| placeholderImage}
+          src={product?.thumbnail|| placeholderImage}
           width={300}
           height={300}
           className="object-contain  object-center w-full h-[300px] overflow-hidden hover:scale-[95%]  transition-all ease-in-out"
-          alt={product?.name}
+          alt={product?.title}
      
         />
         </Link>
@@ -27,7 +27,7 @@ const ProductCard = ({product}:any) => {
       <div className="product-details space-y-2 p-2 overflow-hidden">
         
           <h1 className="font-medium line-clamp-2">
-           {product?.name}
+           {product?.title}
           </h1>
        
         <div className="flex justify-between items-center">

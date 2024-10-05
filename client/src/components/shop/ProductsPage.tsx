@@ -1,20 +1,20 @@
-import React from 'react'
-import ProductCard from '../shared/ProductCard'
 
-const ProductsPage = ({data}:any) => {
+import ProductCard from "../shared/ProductCard";
+
+const ProductsPage = ({ products }: { products: any[] }) => {
   return (
     <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
-      {
-        data.map((product:any, index:any)=>(
+      {products.length > 0 ? (
+        products.map((product: any, index: number) => (
           <div key={index}>
-
-            <ProductCard product={product}/>
+            <ProductCard product={product} />
           </div>
         ))
-      }
-   
+      ) : (
+        <p>No products available</p>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;
