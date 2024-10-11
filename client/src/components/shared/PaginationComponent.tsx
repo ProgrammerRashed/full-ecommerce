@@ -15,13 +15,15 @@ import { useState } from "react";
 interface PaginationComponentProps {
   currentPage: number;
   totalItems: number;
-  limit: number; // Number of items per page
+  limit: number;
+  sortBy: string;
 }
 
 export function PaginationComponent({
   currentPage,
   totalItems,
   limit,
+  sortBy
 }: PaginationComponentProps) {
   const totalPages = Math.ceil(totalItems / limit); // Calculate total pages
   const router = useRouter();
@@ -30,10 +32,7 @@ export function PaginationComponent({
     if (newPage < 1 || newPage > totalPages) return; // Prevent out-of-bounds
     const skip = (newPage - 1) * limit;
 
-    // Simulating an API call with a delay (remove this in production)
-    await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate network delay
-
-    router.push(`?page=${newPage}&skip=${skip}&limit=${limit}`, { scroll: false });
+    router.push(`?page=${newPage}&skip=${skip}&limit=${limit}&sortBy=${sortBy}`, { scroll: false });
   };
 
   const getPaginationItems = () => {

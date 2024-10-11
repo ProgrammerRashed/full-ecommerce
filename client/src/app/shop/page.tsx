@@ -16,16 +16,16 @@ interface SearchParams {
   search?: string;
   limit?: string;
   skip?: string;
-  short?: string;
+  sortBy?: string;
 }
 
 const AllProductShop = async ({ searchParams }: { searchParams: SearchParams }) => {
   const page = parseInt(searchParams["page"] as string) || 1; 
   const skip = parseInt(searchParams["skip"] as string) || 0
   const limit = parseInt(searchParams["limit"] as string) || 10; 
-  const shortBy = searchParams["short"] || "";
+  const sortBy = (searchParams["sortBy"] as string) || "Default";
   
-  const data = await getProductData(page,skip,limit, shortBy,);
+  const data = await getProductData(page,skip,limit, sortBy,);
   const products = Array.isArray(data) ? data : data.products || [];
   const totalItems = data.total
 
@@ -39,13 +39,13 @@ const AllProductShop = async ({ searchParams }: { searchParams: SearchParams }) 
           <SidebarFilters />
         </div>
         <div className="products lg:col-span-9 overflow-hidden">
-          <TopSearchBar />
+          <TopSearchBar  />
 
           <div>
             <ProductsPage products={products}/>
           </div>
           <div className="my-10 w-full mx-auto">
-            <PaginationComponent currentPage={page} totalItems={ totalItems || 0} limit={limit} />
+            <PaginationComponent currentPage={page} totalItems={ totalItems || 0} limit={limit}  sortBy={sortBy} />
           </div>
         </div>
       </div>

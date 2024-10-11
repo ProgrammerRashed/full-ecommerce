@@ -1,53 +1,25 @@
 "use client"
-import { Checkbox } from "@radix-ui/react-checkbox";
 import CartTable from "./CartTable";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Button } from "../ui/button";
-import getJsonData from "@/lib/getJsonData";
-import { useEffect, useState } from "react";
+
 import Link from "next/link";
+import { useCartStore } from "../../../store/cartStore";
 
-
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  brand: string;
-  category: string;
-  price: string;
-  tags: string[];
-}
 
 const ShoppingCart = () => {
-  const [cartProducts, setCartProducts] = useState<Product[]>([]);
+  const { items, total, addItem, removeItem, clearCart } = useCartStore();
 
-  useEffect(() => {
-    // Check if running in the client-side environment
-    if (typeof window !== 'undefined') {
-      const cartItemsRaw = localStorage.getItem("cartProducts");
-      let cartItems:string[] = [];
-
-      if (cartItemsRaw) {
-        cartItems = JSON.parse(cartItemsRaw);
-      }
-
-      const data = getJsonData();
-      const filteredProducts = data.filter(product => cartItems.includes(product.id));
-      setCartProducts(filteredProducts);
-    }
-  }, []);
-
-  // if (cartProducts.length === 0) {
-  //   return <div><h1>No Items are added to the cart!!!</h1></div>;
-  // }
+  if (items.length === 0) {
+    return <div><h1>No Items are added to the cart!!!</h1></div>;
+  }
 
   return (
     // CART PRODUCTS
     <div className="grid lg:grid-cols-12 gap-5">
       <div className="cart lg:col-span-8">
         <h1 className="text-xl lg:font-bold my-4">Cart</h1>
-        <CartTable cartProducts={cartProducts || "null"} />
+        <CartTable />
       </div>
 
       {/* CART SUMMARY */}
@@ -58,7 +30,7 @@ const ShoppingCart = () => {
 
         <div className="flex justify-between items-center pb-3 border-b border-border">
           <h1 className="font-medium">Sub Total</h1>
-          <p>1020.00৳</p>
+          <p>{total}.00৳</p>
         </div>
 
         {/* COURIER OPTIONS */}
