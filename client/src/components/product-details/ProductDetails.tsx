@@ -1,16 +1,14 @@
-import productImage from "../../assets/banner-bg.jpg";
+
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import ProductCard from "../shared/ProductCard";
-import getJsonData from "@/lib/getJsonData";
 import { Button } from "../ui/button";
 
-const ProductDetails = ({ params }: any) => {
-  const data = getJsonData();
-  const product = data.filter((product) => product.id == params.id)[0];
 
-  const relatedProducts = data.filter(relatedProduct => relatedProduct?.category.includes(product?.category))
+const ProductDetails = async ({ product }: { product: any }) => {
 
+
+  console.log("product details page", product)
   if (!product) {
     return (
       <div>
@@ -26,14 +24,14 @@ const ProductDetails = ({ params }: any) => {
           <Image
             width={500}
             height={500}
-            src={product.image}
+            src={product.thumbnail}
             alt="product-image"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="content px-5">
           <div className="title">
-            <h1 className="text-xl font-bold">{product.name}</h1>
+            <h1 className="text-xl font-bold">{product.title}</h1>
           </div>
           <div className="category">
             <div className="flex gap-2 my-3">
@@ -101,14 +99,14 @@ const ProductDetails = ({ params }: any) => {
         <div className="bg-accent p-2 w-full">
           <h1>Related Products</h1>
         </div>
-        <div className="grid grid-cols-4 mt-3 gap-4">
+        {/* <div className="grid grid-cols-4 mt-3 gap-4">
           {
             relatedProducts.map(relatedProduct => (
               <div key={product.id}><ProductCard product={relatedProduct}/> </div>
             ))
           }
           
-        </div>
+        </div> */}
       </div>
     </div>
   );

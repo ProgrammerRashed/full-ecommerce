@@ -16,7 +16,8 @@ return res.json();
 
 
 export async function getSingleProductData(id:number | string) {
+  console.log(id)
   // 'https://dummyjson.com/products?limit=10&skip=10&select=title,price'
-const res = await fetch(`https://dummyjson.com/products/${id}}`);
+const res = await fetch(`https://dummyjson.com/products/2`);
 return res.json();
 }

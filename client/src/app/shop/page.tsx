@@ -36,11 +36,10 @@ const AllProductShop = async ({ searchParams }: { searchParams: SearchParams }) 
 
       <div className="grid lg:grid-cols-12 ">
         <div className="sidebar lg:col-span-3 pb-10 hidden lg:block py-4">
-          <SidebarFilters />
+          <SidebarFilters  />
         </div>
         <div className="products lg:col-span-9 overflow-hidden">
           <TopSearchBar  />
-
           <div>
             <ProductsPage products={products}/>
           </div>
